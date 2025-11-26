@@ -551,7 +551,7 @@ main
 {
     cursor: pointer;
     transition: .2s;
-    background-color: black;
+    background-color: transparent;
 }
 
 .svg-footer
