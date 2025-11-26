@@ -30,6 +30,7 @@ header
 {
 }
 
+
 .lista-menu
 {
     list-style: none;
@@ -94,6 +95,7 @@ header
 #Contato
 {
     margin-right: 2vw;
+    white-space: nowrap;
 }
 
 .perfil-links

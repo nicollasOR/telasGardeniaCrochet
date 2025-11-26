@@ -908,3 +908,80 @@ Boleto
 }
 
 
+@media (max-width: 768px){
+
+ .tela
+ {
+    display: flex;
+    flex-direction: column;
+
+ }   
+
+ .lado-esquerdo
+ {
+    margin: auto;
+    width: 50vw;
+    height: clamp(60vh, 80vh, 100%);
+ }
+ .carrinho
+ {
+    height: 100%;
+ }
+
+ .lado-direito
+ {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto auto auto;
+    width: 50vw;
+    align-items: center;
+    height: clamp(60vh, 80vh, 100%);
+}
+
+.informacoes-endereco
+{
+    height: clamp(85vh, 90vh, 100%);
+    padding-bottom: 10%;
+}
+
+.select
+{
+    width: 20vw;
+}
+
+.opcao
+{
+    width: 20vw;
+}
+
+#selecionarPagamento-menu
+{
+    width: 100%;
+}
+
+#pagamentoSelecionado
+{
+    white-space: nowrap;
+    font-size: 1.5vw;
+}
+
+#seta-img
+{
+    width: 3vw;
+}
+
+.texto-complementar1
+{
+    font-size: 1.7vw;
+}
+
+.img-svg
+{
+    width: 2.5vw;
+}
+
+ 
+
+
+}
