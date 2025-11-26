@@ -138,15 +138,18 @@
                 <ul class="lista-inserir">
                     <li class="inserir">
                         <label for="email" class="titulo-caixa">E-mail:</label>
-                        <input type="email" name="email" id="inserir-dados" placeholder="email@email.com">
+                        <!-- <input type="email" name="email" id="inserir-dados" placeholder="email@email.com"> -->
+                        <input type="email" name="email" id="inserir-dados" placeholder="">
                     </li>
                     <li class="inserir">
                         <label for="telefone" class="titulo-caixa">Telefone:</label>
-                        <input type="tel" name="telefone" id="inserir-dados" placeholder="(00) 9999-8888" >
+                        <!-- <input type="tel" name="telefone" id="inserir-dados" placeholder="(00) 9999-8888" > -->
+                        <input type="tel" name="telefone" id="inserir-dados" placeholder="" >
                     </li>
                     <li class="inserir">
                         <label for="mensagem" class="titulo-caixa">Mensagem:</label>
-                        <input type="text" name="mensagem" id="inserir-dados" placeholder="Digite sua mensagem aqui">
+                        <!-- <input type="text" name="mensagem" id="inserir-dados" placeholder="Digite sua mensagem aqui"> -->
+                        <input type="text" name="mensagem" id="inserir-dados" placeholder="e">
                     </li>
                 </ul>
                 <button type="submit" class="botao-envio">Entrar</button>
@@ -161,35 +164,35 @@
   <article class="rodape-conteudo">
       <img src="assets/img/logo.png" alt="logo-rodape" class="logo-rodape">
       <nav>
-        <ul class="lista-rodape 1">
-            <li><a href="#" class="titulo-footer">Saiba mais</a></li>
-            <li><a href="#">Quem Somos?</a></li><br>
-            <li><a href="#">Nossos meios:</a></li><br>
-            <li><a href="#">Feedbacks</a></li>
+        <ul class="lista-rodape">
+            <li class="lista-lista"><a href="#" class="titulo-footer">Saiba mais</a></li>
+            <li class="lista-lista"><a href="#" class="nav-lists">Quem Somos?</a></li>  
+            <li class="lista-lista"><a href="#" class="nav-lists">Nossos meios:</a></li>
+            <li class="lista-lista"><a href="#" class="nav-lists">Feedbacks</a></li>
         </ul>
         
-        <ul class="lista-rodape 2">
-            <li><a href="#" class="titulo-footer">Certificados</a></li>
-            <li><a href="#">Formações:</a></li><br>
-            <li><a href="#">Pesquisas:</a></li><br>
-            <li><a href="#">Prazos:</a></li>
+        <ul class="lista-rodape">
+            <li class="lista-lista"><a href="#" class="titulo-footer">Certificados</a></li>
+            <li class="lista-lista"><a href="#" class="nav-lists">Formações:</a></li>
+            <li class="lista-lista"><a href="#" class="nav-lists">Pesquisas:</a></li>
+            <li class="lista-lista"><a href="#" class="nav-lists">Prazos:</a></li>
         </ul>
 
-        <ul class="lista-rodape 3">
-            <li><a href="#" class="titulo-footer">Trabalhe Conosco</a></li>
-            <li><a href="#">Vagas Abertas:</a></li><br>
-            <li><a href="#">Sobre Crochet:</a></li><br>
+        <ul class="lista-rodape">
+            <li class="lista-lista"><a href="#" class="titulo-footer">Trabalhe Conosco</a></li>
+            <li class="lista-lista"><a href="#" class="nav-lists">Vagas Abertas:</a></li>
+            <li class="lista-lista"><a href="#" class="nav-lists">Sobre Crochet:</a></li>
         </ul>
         
         <div class="procurar">
           <input type="text" class="procurar-campo" placeholder="O que você procura?">
-          <button type="submit"><img src="assets/svg/lupinha.svg" alt="" class="procurar-botao"></button>
+          <button type="submit" class="procurar-enviar"><img src="assets/svg/lupinha.svg" alt="" class="procurar-botao"></button>
         </div>
       </nav>
     </article>
 
   <section class="final-rodape">
-   <span class="linha-divisoria" id="linha-footer"></span> 
+   <div class="linha-divisoria" id="linha-footer"></div> 
    <p class="direitos"> Todos os direitos reservados | TM® & Copyright © 2025 Senai "Paulo Antônio Skaf"</p>
   </section>
 </footer>
