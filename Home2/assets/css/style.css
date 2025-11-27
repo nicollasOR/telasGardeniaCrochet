@@ -312,7 +312,10 @@ main
       border: 1.8px solid #000;
   box-shadow: 10px 0px 30px rgba(0,0,0,0.4);
     margin-top: 5%;
-    background-image: url(../img/bolinhyas.png);
+    background-image: url(../jpeg/bolinhas.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: var(--cinza-claro-azulado);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -719,3 +722,10 @@ nav{
     margin-left: 4.9vw;
 }
 
+@media (max-width: 768px)
+{
+    .sobre-nos
+    {
+        background-image: url(../jpeg/bolinhasResponsa.jpeg);
+    }
+}
