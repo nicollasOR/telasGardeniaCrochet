@@ -703,8 +703,8 @@ nav{
 {
     width: 90%;
     height: 1vh;
-    background-color: black;
-    border-radius: .1vw;
+    background-color: var(--bege-claro);
+    border-radius: .3vw;
     margin: 0 auto 1vh auto;
 
 }
@@ -726,6 +726,130 @@ nav{
 {
     .sobre-nos
     {
+        height: 70vh;
+        background-image: url(../jpeg/bolinhas2.jpg);
+    }
+
+    #direito-catarina
+    {
+        height: 60vh;
+        margin-bottom: 10%;
+        padding-right: 60%;
+    }
+
+    #inserir-dados
+    {
+        height: 6vh;
+    }
+
+    .icone-contato
+    {
+        height: 3vw;
+        width: 4.5vw;
+    }
+
+    .texto-informacoes
+    {
+        font-size: 1.7vw;
+        white-space: nowrap;
+    }
+
+    .dados
+    {
+        margin-top: 7%;
+        gap: 15%;
+    }
+
+    .mensagem
+    {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    }
+
+    .titulo-caixa
+    {
+        font-size: 2vw;
+    }
+
+    .inserir
+    {
+        gap: 0;
+    }
+
+    #inserir-dados
+    {
+
+    }
+
+    #local-contato
+    {
+        padding-left: 1vw;
+    }
+
+    .botao-envio
+    {
+        margin: 0 0 3.5vh 0;
+        border-radius: 1vw;
+        font-size: 1.9vw;
+        width: 20vw;
+    }
+
+    nav
+    {
+        gap: 30%;
+    }
+
+
+    .lista-rodape
+    {
+        font-size: 1.8vw;
+        
+    }
+
+    #titulo-footer-trabalhe
+    {
+        margin-bottom: 20%;
+    }
+
+    .logo-rodape
+    {
+        width:  9.5vw;
+        height: 9.5vw;
+    }
+
+    .procurar
+    {
+        margin-top: 5%;
+    }
+
+    .procurar-campo
+    {
+        font-size: 1.2vw;
+        font-weight: 600;
+    }
+
+    .procurar-botao
+    {
+        width: 2.5vw;
+    }
+
+
+
+
+
+    #linha-footer
+    {
+        background-color: var(--bege-claro);
         background-image: url(../jpeg/bolasMobile.jpeg);
     }
+
+
+    .direitos
+    {
+        font-size: 1.5vw;
+    }
+
 }
