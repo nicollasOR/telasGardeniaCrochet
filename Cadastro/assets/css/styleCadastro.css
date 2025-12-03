@@ -1,0 +1,75 @@
+
+body
+{
+    background-color: var(--bege-claro);
+
+}
+main
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: center;
+    align-items: center; */
+    margin: 10%;
+}
+
+.lado-esquerdo
+{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+.texto-subtitulo
+{
+    font-family: var(--Poppins);
+    /* font-size: 1.5vw; */
+    font-size: clamp(1.5vw, 1.6vw, 1.8rem);
+    color: var(--marrom);
+    font-weight: 800;
+    white-space: nowrap;
+    /* padding: 0 2vw; */
+}
+
+.cadastro
+{
+    width: 29vw;
+    /* background-color: black; */
+}
+
+.cadastro-botao
+{
+    height: 80%;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    
+    border-radius: .5vw;  
+    background-color: var(--cinza-claro-azulado);
+    border: .2vw solid var(--cinza-azulado);
+
+}
+
+.cadastro-botao:active
+{
+    background-color: #7F8A94;
+
+}
+
+.img
+{
+    height: 100%;
+    width: 11%;
+    margin: 3%;
+}
+
+
+.telefone-img
+{
+    margin-right: -1%;
+}
+#display-none
+{
+    display: none;
+}
