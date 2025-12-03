@@ -5,7 +5,6 @@
 :root
 {
     --cinza-azuladoRGB:98, 114, 127;
-    
     --borda-azul-escura: #444F58;
     --marrom: #362e26;
     --cinza-azulado: #62727F;
@@ -15,7 +14,7 @@
     --vermelho-escuro: #BF0D03;
     --Poppins: "Poppins", sans-serif;
     --Lobster: "Lobster", sans-serif;
-    --Inter: "Inter", sans-serif;
+    --Inter:   "Inter", sans-serif;
 }
 
 *
