@@ -403,7 +403,7 @@ main {
     font-family: "Poppins", sans-serif;
     font-size: 1vw;
     margin-left: 3%;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--marrom);
 }
 
@@ -448,25 +448,6 @@ main {
     color: var(--marrom);
 }
 
-/* #inserir-dados
-{   
-  border: 3px solid #362e26;
-
-  border-radius: 5px;        
-  height: 7vh;
-  width: 35vw;  
-  background-color: transparent; 
-
-  font-family: "Poppins", sans-serif;
-  font-size: 1.0vw;
-  font-weight: 700;
-  text-align: left;
-  padding-left: 2%;
-}
-#inserir-dados::placeholder
-{
-    color: var(--marrom);
-} */
 
 .inserir-dados {
     border: 3px solid #362e26;
@@ -550,11 +531,11 @@ footer {
 
 
 .logo-rodape {
-    width: 9vw;
+    width: 8vw;
     /* height: 11vh; */
     /* height: 7rem; */
     /* height: 9vw; */
-    height: 14vh;
+    height: 16vh;
     border: 2px solid var(--bege-claro);
     border-radius: 50%;
     object-fit: cover;
@@ -688,12 +669,21 @@ nav {
         margin-bottom: 0;
     }
 
-
-    .modelos {}
+    .linha-divisoria {
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    height: .6vh;
+    background-color: var(--cinza-azulado);
+    border-radius: 1vw;
+}
 
     .modelo-img {
         height: 50vh;
     }
+
+
 
 
 
@@ -797,7 +787,6 @@ nav {
 
     #linha-footer {
         background-color: var(--bege-claro);
-        background-image: url(../jpeg/bolasMobile.jpeg);
     }
 
 
