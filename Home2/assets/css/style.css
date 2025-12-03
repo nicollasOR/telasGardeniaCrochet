@@ -261,31 +261,32 @@ main
 .modelo-img
 {
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     border-radius: 1vw;
-    /* border-radius: 1rem; */
-    border: 5px solid var(--borda-azul-escura);
+    border: .4vw solid var(--borda-azul-escura);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 #modelo1
 {
     background-image: url(../jpeg/img1.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 #modelo2
 {
     background-image: url(../jpeg/img2.jpeg);
-    background-size: cover;
 }
 
 #modelo3
 {
     background-image: url(../jpeg/img3.jpeg);
-    background-size: cover;
 }
+
+
 .modelo-texto
 {
     text-align: center;
@@ -499,9 +500,9 @@ main
     color: var(--marrom);
 }
 
-#inserir-dados
+/* #inserir-dados
 {   
-    border: 3px solid #362e26;
+  border: 3px solid #362e26;
 
   border-radius: 5px;        
   height: 7vh;
@@ -517,29 +518,46 @@ main
 #inserir-dados::placeholder
 {
     color: var(--marrom);
+} */
+
+.inserir-dados
+{   
+  border: 3px solid #362e26;
+
+  border-radius: 5px;        
+  height: 7vh;
+  width: 35vw;  
+  background-color: transparent; 
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.0vw;
+  font-weight: 700;
+  text-align: left;
+  padding-left: 2%;
+}
+.inserir-dados::placeholder
+{
+    color: var(--marrom);
 }
 
-/* .mensagem
+.mensagem
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3vw;
+}
 
 .botao-envio
 {
-    margin: 7% 0 0 10%;
-    /* margin-top: auto;
-    margin-bottom: auto;
-    margin-left:auto ;
-    margin-right:auto; */
+    align-self: center;
+
     width: 25vw;
-    height: 4.6vh;
+    height: 5.6vh;
     border-radius: 10px;
     border: 2.2px solid var(--cinza-azulado);
-    /* background-color: rgba(var(--cinza-azuladoRGB), 0.85); */
-
-    
+    /* background-color: rgba(var(--cinza-azuladoRGB), 0.85); */ 
 
     font-size: 1.5vw;
     font-weight: 700;
@@ -587,17 +605,18 @@ footer
     display: inline-flex;
     justify-items: flex-start;
     align-items: normal;
-    gap: 4vw;
+    gap: 10vw;
     margin: 2% 2vw 2% 2vw;
 }
 
 
 .logo-rodape
 {
-    width:  6vw;
+    width:  9vw;
     /* height: 11vh; */
     /* height: 7rem; */
-    height: 6vw;
+    /* height: 9vw; */
+    height: 14vh;
     border: 2px solid var(--bege-claro);
     border-radius: 50%;
     object-fit: cover;
@@ -607,7 +626,7 @@ footer
 
 nav{
     display: inline-flex;
-    gap: 10vw;
+    gap: 14vw;
     list-style: none;
 }
 
@@ -627,7 +646,8 @@ nav{
     list-style: none;
 
     font-family: var(--Poppins);
-    font-size: 1.1vw;
+    /* font-size: 1.4vw; */
+    font-size: 1.09rem;
     font-weight: 500;
     text-decoration: none;
 }
@@ -654,6 +674,8 @@ nav{
     display: grid;
     grid-template-columns: 1fr .1fr;
     align-items: center;
+    margin-top: 3%;
+    /* margin-left: 30%; */
 }
 
 .procurar-campo
@@ -732,12 +754,13 @@ nav{
 
     #direito-catarina
     {
-        height: 60vh;
         margin-bottom: 10%;
         padding-right: 60%;
+        height: 75%;
+        width: 60%;
     }
 
-    #inserir-dados
+    .inserir-dados
     {
         height: 6vh;
     }
@@ -799,7 +822,7 @@ nav{
 
     nav
     {
-        gap: 30%;
+        gap: 23%;
     }
 
 
@@ -817,12 +840,13 @@ nav{
     .logo-rodape
     {
         width:  9.5vw;
-        height: 9.5vw;
+        height: 12vh;
     }
 
     .procurar
     {
         margin-top: 5%;
+        margin-left: 0;
     }
 
     .procurar-campo
