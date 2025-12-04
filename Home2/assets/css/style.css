@@ -18,10 +18,6 @@ header {
     background-repeat: no-repeat;
     height: 100%;
     max-width: 100vw;
-    /* height: clamp(10vw); */
-    /* height: 45vw; */
-    /* height: 100vh; */
-    /* height: 40rem; */
     height: clamp(45vw, 40rem, 100vh);
     /* width: calc(99vw + .2%); */
 }

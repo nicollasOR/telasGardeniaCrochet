@@ -96,32 +96,46 @@ main
     gap: 1vw;
 }
 
+/* Parte do Input:checkbox */
+
 .checkbox-robo
 {
   margin-right: 10%;
-  width: 25px;
-  height: 25px;
+  width: 2.4vw;
+  height: clamp(1rem, 2.4vw ,3rem);
+
   cursor: pointer;
 
   appearance: none;
-  border: 2px solid #555;
-  border-radius: 4px;
+
+  border: .2vw solid var(--cinza-azulado);
+  background-color: #FFFF;
+  border-radius: .6vw;
 }
 
 .checkbox-robo:checked
 {
-  background: #4caf50;
-  position: relative;
+  /* background: #4caf50; */
+  /* position: relative; */
+
+  position: static;
+
+  background-image: url(../img/svg/check.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bakc
+
 }
 
 .checkbox-robo::after
 {
-  content: "oi";
+  /* content: "oi";
   color: white;
   font-size: 20px;
   position: absolute;
   left: 4px;
-  top: -2px;
+  top: -2px; */
 }
 
 .robo-img
