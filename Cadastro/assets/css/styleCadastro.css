@@ -8,7 +8,8 @@ main
 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 10%;
+    /* margin: 10%; */
+    margin: 0 10%;
 }
 
 .lado-esquerdo
@@ -19,10 +20,11 @@ main
     gap: 3vw;
 
     align-items: center;
+    margin-top: 22%;
     padding-right: 16vw;
 }
 
-.texto-subtitulo
+.texto-botao
 {
     font-family: var(--Poppins);
     font-size: clamp(1.5vw, 1.6vw, 1.8rem);
@@ -121,10 +123,11 @@ main
   position: static;
 
   background-image: url(../img/svg/check.svg);
-  background-size: cover;
+  /* background-size: cover; */
+  background-size: 2vw;
   background-repeat: no-repeat;
   background-position: center;
-  bakc
+  
 
 }
 
@@ -144,4 +147,88 @@ main
     height: 90%;
     margin: 5% 0% 5% 5%;
 }
+
+.lado-direito
+{
+    margin-top: 10%;
+    margin-bottom: 100%;
+    
+    height: clamp(40vh, 50vw, 60rem);
+    width: clamp(30vw, 35vw, 50rem);
+
+    border: .4vw solid var(--borda-azul-escura);
+    border-radius: 1vw;
+    background-color: var(--cinza-azulado);
+}
+
+.gardenia-bemvindo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    gap: 2.5vw;
+    padding: 10% 10% 20% 10%;
+    /* margin-bottom: 20%; */
+
+}
+
+.gardenia-img
+{
+    margin-top: 0%;
+    width: clamp(10vw, 15vw, 20rem);
+    height: auto;
+    border-radius: 50%;
+    border: .3vw solid var(--marrom);
+}
+
+.gardenia-textos
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5vw;
+    margin-bottom: 15%;
+}
+
+.texto-titulo
+{
+    font-size: clamp(2vw, 3vw, 4rem);
+    font-family: var(--Lobster);
+    font-weight: 400;
+    color: var(--bege-claro);
+}
+
+.texto-pequeno
+{
+    font-size: clamp(1vw, 1.5vw, 1.5rem);
+    font-family: var(--Poppins);
+    font-weight: 550;
+    color: var(--branco);
+}
+
+
+.gardenia-botao
+{
+    width: 95%;
+    /* height: clamp(33vh, 30vw, 50rem); */
+    /* padding: .5vh 0; */
+    padding: clamp(.3vh, .1vw, 1rem) 0;
+    
+    border-radius: 1vw;
+    border: .2vw solid var(--borda-azul-escura);
+    background-color: var(--cinza-claro-azulado);
+
+}
+
+.gardenia-botao:hover
+{
+    cursor: pointer;
+}
+
 
