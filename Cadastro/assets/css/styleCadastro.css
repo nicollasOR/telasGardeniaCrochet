@@ -8,8 +8,6 @@ main
 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* justify-content: center;
-    align-items: center; */
     margin: 10%;
 }
 
@@ -19,17 +17,18 @@ main
     display: flex;
     flex-direction: column;
     gap: 3vw;
+
+    align-items: center;
+    padding-right: 16vw;
 }
 
 .texto-subtitulo
 {
     font-family: var(--Poppins);
-    /* font-size: 1.5vw; */
     font-size: clamp(1.5vw, 1.6vw, 1.8rem);
     color: var(--marrom);
     font-weight: 800;
     white-space: nowrap;
-    /* padding: 0 2vw; */
 }
 
 .cadastro
@@ -69,7 +68,66 @@ main
 {
     margin-right: -1%;
 }
+
 #display-none
 {
     display: none;
 }
+
+.linha-divisoria
+{
+    display: flex;
+    width: 100%;
+    height: clamp(1vh, .7vw, 2vh);
+    background-color: var(--cinza-claro-azulado);
+    border-radius: .1vw;
+}
+
+.nao-sou-robo
+{
+
+}
+.form-robo
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1vw;
+}
+
+.checkbox-robo
+{
+  margin-right: 10%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+
+  appearance: none;
+  border: 2px solid #555;
+  border-radius: 4px;
+}
+
+.checkbox-robo:checked
+{
+  background: #4caf50;
+  position: relative;
+}
+
+.checkbox-robo::after
+{
+  content: "oi";
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  left: 4px;
+  top: -2px;
+}
+
+.robo-img
+{
+    width: 15%;
+    height: 90%;
+    margin: 5% 0% 5% 5%;
+}
+
