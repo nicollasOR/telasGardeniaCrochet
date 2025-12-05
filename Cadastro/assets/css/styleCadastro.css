@@ -131,8 +131,8 @@ main
 
   position: static;
 
-  background-image: url(../img/svg/check.svg);
   /* background-size: cover; */
+  background-image: url(../img/svg/check.svg);
   background-size: 2vw;
   background-repeat: no-repeat;
   background-position: center;

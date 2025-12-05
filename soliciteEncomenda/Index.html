@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicite sua Encomenda!</title>
+    <link rel="stylesheet" href="assets/css/styleGlobal.css">
+    <link rel="stylesheet" href="assets/css/soliciteEncomenda.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navegacao">
+            <ul class="lista-menu">
+                <li> <img src="assets/img/logoR.png" alt="logo-gardenia-crochet" class="logo"></li>
+
+                <div class="linha-separadora"></div>
+                <li class="nav-links">
+                    <a href="#" class="link-ativo sub-texto" id="portifolio">Portifólio</a>
+                    <a href="#" class="link-ativo sub-texto" id="Encomenda">Encomenda</a>
+                    <a href="#" class="link-ativo sub-texto" id="Carrinho">Carrinho</a>
+                    <a href="#" class="link-ativo sub-texto" id="Contato">Entre em Contato</a>
+                </li>
+                <div class="linha-separadora"></div>
+                <li class="perfil-links">
+                    <a href="#" class="link-ativo" id="perfil">Perfil</a>
+                    <button type="submit" onclick="console.log('eh')"><img class="login" src="assets/svg/perfil.svg"
+                            alt=""></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tela-principal">
+        <h1 class="titulo-encomenda">Solicite sua encomenda!</h1>
+        <section class="tela-encomenda">
+            <h2 class="pequeno-texto">Tipo de trabalho</h2>
+            <div id="selecionarPagamento-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
+                <div id="pagamentoSelecionado">Não selecionado</div>
+                <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
+            </div>
+            </div>
+
+            <ul id="opcoes" role="listbox" aria-labelledby="pagamentoSelecionado">
+                <li class="opcao" role="option">
+                    <input type="radio" name="selecionado" id="opt-pix" value="selecionadoPIX" data-label="Pix">
+                    <label for="opt-pix" class="texto-complementar1">Fio conduzido</label>
+                    <img src="assets/img/svg/pixzin.svg" alt="" class="pix img-svg" id="pix-img">
+                </li>
+
+                <li class="opcao" role="option">
+                    <input type="radio" name="selecionado" id="opt-cartao" value="selecionadoCARTAO"
+                        data-label="Cartão">
+                    <label for="opt-cartao" class="texto-complementar1">Referência</label>
+                    <img src="assets/img/svg/cartaozin.svg" alt="" class="cartao img-svg" id="cartao-img">
+                </li>
+
+                <section class="fio-conduzido-selecionado">
+
+                    <aside class="inserir-imagem">
+                        <h2 class="pequeno-texto">Insira o desenho em formato de pixel art:</h2>
+                        <form action="" lass="inserir-dados-form">
+                            <p class="pequeno-texto">Arraste ou procure a imagem nos arquivos</p>
+                            <button class="insira-imagem">
+                                <img src="" alt="" class="inserir-img">
+                            </button>
+                        </form>
+                    </aside>
+
+                    <aside class="inserir-dados">
+                        <h2 class="pequeno-texto">Insira a imagem de referência</h2>
+                        <form action="" class="inserir-dados-form">
+                            <p class="pequeno-texto">
+                                Qual o tamanho médio desejado para a tapeçaria
+                                <br>(Leve em consideração o tamanho do desenho)
+                            </p>
+                        </form>
+                            <div class="inserir-seu-dados">
+                                <p class="pequeno-texto">Largura</p>
+                                <label for="" class="inserir-label inserir-altura"></label>
+                                <p class="pequeno-texto">Altura</p>
+                                <label for="" class="inserir-largura"></label>
+                            </div>
+                        <!-- </form> -->
+                    </aside>
+                </section>
+
+                <section class="referencias-selecionado">
+                    <form action="" class="inserir-imagem">
+                        <p class="pequeno-texto">Arraste ou procure a imagem nos arquivos</p>
+                        <button class="insira-imagem">
+                            <img src="" alt="" class="inserir-img">
+                        </button>
+                    </form>
+
+                    <form action="" class="inserir-seusdados">
+                        <aside class="lado-esquerdo">
+                            <div class="cor">
+                                <p class="pequeno-texto">Cor</p>
+                                <label for="" class="inserir-label"></label>
+                            </div>
+
+                            <div class="tamanho">
+                                <p class="pequeno-texto select">Tamanho</p>
+                                Não selecionado
+                            </div>
+
+                        </aside>
+
+                        <aside class="lado-direito">
+
+
+                        </aside>
+                    </form>
+
+                </section>
+        </section>
+    </main>
+
+</body>
+
+</html>
