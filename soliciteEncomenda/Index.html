@@ -78,9 +78,9 @@
                         </form>
                             <div class="inserir-seu-dados">
                                 <p class="pequeno-texto">Largura</p>
-                                <label for="" class="inserir-label inserir-altura"></label>
+                                <label for="" class="background-tag inserir-altura"></label>
                                 <p class="pequeno-texto">Altura</p>
-                                <label for="" class="inserir-largura"></label>
+                                <label for="" class="background-tag inserir-largura"></label>
                             </div>
                         <!-- </form> -->
                     </aside>
@@ -98,19 +98,40 @@
                         <aside class="lado-esquerdo">
                             <div class="cor">
                                 <p class="pequeno-texto">Cor</p>
-                                <label for="" class="inserir-label"></label>
+                                <label for="" class="background-tag inserir-cor"></label>
                             </div>
 
                             <div class="tamanho">
-                                <p class="pequeno-texto select">Tamanho</p>
-                                Não selecionado
+                                <p class="pequeno-texto selecione-tamanho">Tamanho</p>
+                                <select name="Euem" class="input" id="background-tag selecao-tamanho">
+                                    <option value="pequeno"class="background-tag selecione-tamanho">Pequeno</option>
+                                    <option value="medio"  class="background-tag selecione-tamanho">Médio</option>
+                                    <option value="grande" class="background-tag selecione-tamanho">Grande</option>
+                                </select>
                             </div>
 
+                            <div class="insira-link">
+                                <p class="pequeno-texto">Tem algum tutorial online? <br> Insira o link abaixo</p>
+                                <label for="" class="background-tag inserir-link" ></label>
+                            </div>
                         </aside>
 
                         <aside class="lado-direito">
+                        <div class="linha">
+                            p.pequeno-texto{A linha precisa ser hipoalergênica?}
+                            <button class="background-tag botao-sim"> Sim</button>
+                            <button class="background-tag botao-nao"> Não</button>
+                        </div>
 
+                        <div class="linha-especifica">
+                            <p class="pequeno-texto">Deseja um tipo de linha específica?</p>
+                            <label for="" class="background-tag label-linha"></label>
+                        </div>
 
+                        <div class="observacao">
+                            <p class="pequeno-texto">Alguma observação adicional?</p>
+                            <label for="" class="background-tag label-observacao"></label>
+                        </div>
                         </aside>
                     </form>
 

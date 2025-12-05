@@ -223,9 +223,10 @@ body
 .produto-diminuir, .produto-quantia, .produto-aumentar
 {
     font-family: var(--Poppins);
+    font-size: clamp(1vw, 1.5vw, 4rem);
     display: flex;
     align-items: center;
-    height: 2.1vw;
+    height: clamp(1vh, 3vw, 4rem);
     width: 2.5vw;
 }
 
@@ -939,13 +940,13 @@ Boleto
 
  .produto-img
  {
-    width: 13.5vw;
+    width: clamp(10vw, 19vw, 20rem);
 
  }
 
  .produto-informacoes, .produto-nome
  {
-    font-size: 1.58vw;
+    font-size: clamp(1vw, 2vw, 4rem);
  }
 
 
@@ -1049,7 +1050,7 @@ Boleto
 #pagamentoSelecionado
 {
     white-space: nowrap;
-    font-size: 1.4vw;
+    font-size: clamp(1.4vw, 1.5vw, 4rem);
 }
 
 #seta-img
@@ -1059,12 +1060,12 @@ Boleto
 
 .texto-complementar1
 {
-    font-size: 1.7vw;
+    font-size: clamp(1.7vw, 1.9vw, 4rem);
 }
 
 .img-svg
 {
-    width: 2.5vw;
+    width: clamp(2vw, 3vw, 4rem);
 }
 
 .pix-selecionado
@@ -1117,7 +1118,7 @@ Boleto
 
 .titulo-complementar
 {
-    font-size: 2.0vw;
+    font-size: clamp(2vw, 3vw, 4rem);
 }
 
 .boleto-img
@@ -1127,15 +1128,37 @@ Boleto
 
 .boleto-botao
 {
-    font-size: 1.2vw;
-    width: 50%;
-    height: clamp(4vh, 5vw, 5vh);
+    font-size: clamp(1vw, 2vw, 3rem);
+    width: 59%;
+    white-space: nowrap;
+    height: clamp(2vh, 6vw, 5vh);
 }
 
 .botao-prosseguir
 {
-    font-size: 2.9vw;
+    font-size: clamp(2vw, 3vw, 4rem);
     width: 90%;
     height: clamp(4vh, 5vw, 5vh);
+}
+
+.produto-coordenar
+{
+    margin-top: 40%;
+    display: inline-flex;
+    border: .5vw solid var(--marrom); 
+    border-radius: .3vw;
+    gap: .3vw;
+}
+
+
+
+.pix-pagamento
+{
+    font-size: clamp(1vw, 2.5vw, 4rem);
+}
+
+.preco-total
+{
+    font-size: clamp(1.5vw, 2.3vw, 4rem);
 }
 }
