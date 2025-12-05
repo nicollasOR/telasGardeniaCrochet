@@ -1,0 +1,158 @@
+body
+{
+    background-color: var(--bege-claro);
+    list-style: none;
+    user-select: none;
+
+    
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+
+
+
+
+
+header {
+    background-image: url(../img/homeimg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-width: 100vw;
+}
+
+.navegacao {
+    width: 100%;
+}
+
+
+.lista-menu {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 2vw;
+
+    background-color: rgba(var(--cinza-azuladoRGB), 0.85);
+    width: 100%;
+    height: clamp(2rem,6.9vw, 7rem);
+    padding: 0 2vw;
+}
+
+.logo {
+    width: 7vw;
+    height: auto;
+    margin-top: 3%;
+    padding: 10%;
+
+}
+
+.linha-separadora {
+    width: .3vw;
+    background-color: var(--cinza-claro-azulado);
+    height: 75%;
+}
+
+.nav-links {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    gap: 10vw;
+}
+
+.sub-texto {
+    font-family: var(--Poppins);
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+
+.link-ativo {
+    padding: 0 -2vw;
+
+    color: #fff;
+    text-decoration: none;
+}
+
+#Contato {
+    margin-right: 2vw;
+    white-space: nowrap;
+}
+
+.perfil-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+#perfil {
+    font-size: 1.5vw;
+    font-weight: 700;
+    font-family: var(--Poppins);
+}
+
+.link-ativo:hover {
+    color: var(--vermelho-escuro);
+    transition: .4s;
+}
+
+.login {
+    width: 3.5vw;
+    height: auto;
+    margin: auto;
+    padding: auto;
+}
+
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tela-principal
+{
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    
+    width: clamp(90%, 91%, 100%);
+    height: clamp(80vh, 90vh, 100%);
+
+    border: .5vw solid var(--cinza-azulado);
+    border-radius: .2vw;
+}
+
+.titulo-encomenda
+{
+    font-family: var(--Lobster);
+    font-weight: 800;
+    font-size: clamp(2rem, 3vw, 4rem);
+    color: var(--marrom);
+}
+
+.pequeno-texto
+{
+    font-family: var(--Poppins);
+    font-size: clamp(1rem, 1.8vw, 3rem);
+    font-weight: 700;
+    color: var(--marrom);
+}
+
+.background-tag
+{
+    height: 10vh;
+    width: 15vw;
+
+    background-color: var(--cinza-azulado); 
+    border: .2vw solid var(--borda-azul-escura);
+    border-radius: 1vw;
+}
+
+
