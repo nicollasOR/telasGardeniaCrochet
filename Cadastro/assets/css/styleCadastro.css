@@ -76,6 +76,14 @@ main
     display: none;
 }
 
+#telefone
+{
+    padding: 1vw;
+    text-align: center;
+    align-items: center;
+    padding-left: 3vw;
+}
+
 .linha-divisoria
 {
     display: flex;
@@ -222,6 +230,9 @@ main
 .gardenia-botao:hover
 {
     cursor: pointer;
+    background-color: transparent;
+    border: .2vw solid var(--cinza-branco);
+    color: var(--cinza-branco);
 }
 
 .gardenia-botao:active
@@ -321,6 +332,11 @@ main
         font-size: clamp(1vw, 2.5vw, 1.8rem);
     }
 
+    #telefone
+    {
+        padding-left: 6vw;
+    }
+
     .telefone-img
     {
         margin-right: -3%;
@@ -330,6 +346,11 @@ main
     {
         width:  clamp(1.2rem, 2.5vw, 5rem);
         height: clamp(1.2rem, 2vw ,5rem);
+    }
+
+    .checkbox-robo:checked
+    {
+        background-size: 4vw;
     }
 
     
