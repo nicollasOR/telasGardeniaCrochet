@@ -1,0 +1,1 @@
+Este repositório tem como objetivo subir as alterações que eu tive de interagir com.
