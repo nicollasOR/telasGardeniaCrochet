@@ -117,22 +117,22 @@ button {
 
 .tela-principal
 {
-    margin: 5%;
+    margin: 2% 3%;
     display: flex;
     flex-direction: column;
-    gap: 2vw;
+    gap: clamp(2rem, 3vw, 4rem);
     
     width: clamp(90%, 91%, 100%);
     height: clamp(80vh, 90vh, 100%);
 
-    border: .5vw solid var(--cinza-azulado);
     border-radius: .2vw;
 }
+
 
 .titulo-encomenda
 {
     font-family: var(--Lobster);
-    font-weight: 800;
+    font-weight: 500;
     font-size: clamp(2rem, 3vw, 4rem);
     color: var(--marrom);
 }
@@ -141,18 +141,216 @@ button {
 {
     font-family: var(--Poppins);
     font-size: clamp(1rem, 1.8vw, 3rem);
-    font-weight: 700;
+    font-weight: 600;
     color: var(--marrom);
+    white-space: nowrap;
 }
 
 .background-tag
 {
-    height: 10vh;
-    width: 15vw;
-
-    background-color: var(--cinza-azulado); 
+    width: clamp(10rem, 15vw, 20rem);
+    height: clamp(2rem, 2.5vw, 4rem);
+    
+    background-color: var(--cinza-azulado);
     border: .2vw solid var(--borda-azul-escura);
-    border-radius: 1vw;
+    border-radius: .5vw;
+}
+
+.tela-encomenda
+{
+    border: .5vw solid var(--cinza-azulado);
+    border-radius: .2vw;
+    height: clamp(90%, 95%, 100%);
+    width: clamp(90%, 100%, 100%);
+
+    margin: 0 0% 0 clamp(1%, 1.9%, 2%);
+    padding: 2% 2% 0% 2%;
+}
+
+.select
+{
+    background-color: var(--cinza-azulado);
+    width: clamp(10%, 20%, 39%);
+    /* height: clamp(5rem, 7vw, 10rem); */
+    margin-bottom: clamp(1vw, 2.5vw, 3rem);
+
+    border-radius: .5vw;    
+
+}
+
+#selecionarPagamento-menu {
+    margin-top: clamp(.5vh, 2vw, 2rem);
+    display: flex;
+    padding: clamp(.5rem, 1vw, 2rem);
+    align-items: center;
+    justify-content: space-between;
+    border-radius: .5vw;
+    background-color: var(--cinza-azulado);
+    
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+        /* Teste onde fica o display */
+    /* border: 1px solid #252529; */
+    /* width: clamp(10rem, 13vw, 20rem); */
+    
+}
+
+#pagamentoSelecionado {
+    font-family: var(--Poppins);
+    /* font-size: clamp(1rem, 1.4vw, 2vw); */
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: var(--marrom);
+    white-space: nowrap;
+    margin-right: 5%;
+}
+
+#seta-img {
+  transition: transform .25s ease;
+  /* width: clamp(.8rem, 2vw, 5rem);
+  height: clamp(.8rem, 2vw, 5rem); */
+  width: clamp(10%, 12%, 15%);
+  height: clamp(8%, 12%, 15%);
+}
+
+/* lista de opções - inicialmente escondida */
+#opcoes {
+
+  border-radius: .5vw;
+  /* width: clamp(10rem, 13vw, 20rem); */
+  width: clamp(90%, 100%, 100%);
+  display: none; /* controlado via JS */
+  background-color: var(--cinza-azulado); 
+}
+
+.opcao-texto
+{
+    font-size: clamp(1vw, 1.4vw, 3rem);
+
+}
+
+.opcao {
+    width: 100%;
+    height: clamp(.5vw, 1vh, 2rem);
+
+    display: flex;
+    align-items: center;
+
+    border-radius: .5vw;
+    margin-bottom: clamp(.1vw, 1vw, 3rem);
+    padding: clamp(1vh, 1.5vw, 2rem) clamp(1vw, 1.1vw, 1.4rem);
+    background-color: var(--cinza-azulado);
+    
+    cursor: pointer;
+    transition: background-color .18s ease;
+    
+    /* padding: 0.9rem 1rem; */
+    /* border-bottom: 1px solid #252529; */
+}
+
+.opcao:hover {
+  /* background-color: #0000ff; */
+}
+
+.img-svg {
+  width: 1.3vw;
+
+}
+
+.pix, .cartao, .boleto {
+  /* width: 1.5vw; */
+   color: black;
+}
+
+/* REMOVE a bolinha padrão do radio (sem ponto interno).
+   Indicação de seleção: muda a borda e adiciona leve halo, sem 'bolinha' preenchida. */
+.opcao input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  /* width: 1rem; */
+  /* height: 1rem; */
+  border-radius: 50%;
+  border: 1px solid #AFA8B6;
+  background-color: transparent;
+  margin: 0;
+  margin-right: .5rem;
+  cursor: pointer;  
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+/* checked: sem preenchimento interno (sem bolinha), apenas cor/borda */
+.opcao input[type="radio"]:checked {
+  background-color: transparent; /* sem bolinha */
+  border-color: #A881E6;
+  box-shadow: 0 0 0 3px rgba(168,129,230,0.08); /* halo suave opcional */
+  
+}
+
+/* open state: #opcoes é irmão direto (adjacent) do container .dropdown */
+.dropdown.open + #opcoes {
+  display: block;
+}
+
+/* seta rotaciona quando a div container tem .open */
+.dropdown.open #seta-img {
+  transform: rotate(180deg);
+}
+
+/* foco acessível */
+.opcao:focus-within{
+  /* outline: 1px solid #A881E6; */
+  background-color: var(--cinza-azulado);
+  
+}
+
+/* Destaque para a opção selecionada: altera label e ícone (não background) */
+.opcao--selected .texto-complementar1,
+.opcao:focus-within .texto-complementar1 {
+  color: #ffffff !important;
+}
+
+/* ícone branco via filtro (para SVG/PNG monocromáticos usados com <img>) */
+.opcao--selected .img-svg,
+.opcao:focus-within .img-svg {
+}
+
+/* Pequeno hover para feedback (sem alterar cor principal) */
+
+/* foco por teclado (mais visível) */
+.opcao:focus {
+  outline: 2px solid rgba(168,129,230,0.25);
+  outline-offset: 2px;
+  border-radius: .5vw;
+}
+
+.fio-conduzido-selecionado
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 2vw, 3rem);
+}
+
+.inserir-imagem
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+
+    height: clamp(40%, 80%, 90%);
+
+    padding: clamp(1rem, 2vw, 3rem);
+    margin-bottom: 5%;
+    border: .4vw solid var(--borda-azul-escura);
+    border-radius: .2vw;
+}
+
+.referencias-selecionado
+{
+    display: none;
 }
 
 

@@ -7,6 +7,7 @@
     <title>Solicite sua Encomenda!</title>
     <link rel="stylesheet" href="assets/css/styleGlobal.css">
     <link rel="stylesheet" href="assets/css/styleEncomenda.css">
+    <script src="../soliciteEncomenda/assets/js/script.js" defer></script>
 </head>
 
 <body>
@@ -35,7 +36,9 @@
     <main class="tela-principal">
         <h1 class="titulo-encomenda">Solicite sua encomenda!</h1>
         <section class="tela-encomenda">
-            <h2 class="pequeno-texto">Tipo de trabalho</h2>
+            <h2 class="pequeno-texto">Tipo de trabalho:</h2>
+            <section class="select">
+            <div id="selecionar-Tipo-Pagamento" class="dropdown">
             <div id="selecionarPagamento-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
                 <div id="pagamentoSelecionado">Não selecionado</div>
                 <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
@@ -44,18 +47,17 @@
 
             <ul id="opcoes" role="listbox" aria-labelledby="pagamentoSelecionado">
                 <li class="opcao" role="option">
-                    <input type="radio" name="selecionado" id="opt-pix" value="selecionadoPIX" data-label="Pix">
-                    <label for="opt-pix" class="texto-complementar1">Fio conduzido</label>
-                    <img src="assets/img/svg/pixzin.svg" alt="" class="pix img-svg" id="pix-img">
+                    <input type="radio" name="selecionado" id="opt-pix" value="selecionadoFioConduzido" data-label="Pix">
+                    <label for="opt-pix" class="pequeno-texto opcao-texto">Fio conduzido</label>
                 </li>
 
                 <li class="opcao" role="option">
-                    <input type="radio" name="selecionado" id="opt-cartao" value="selecionadoCARTAO"
+                    <input type="radio" name="selecionado" id="opt-cartao" value="selecionadoReferencia"
                         data-label="Cartão">
-                    <label for="opt-cartao" class="texto-complementar1">Referência</label>
-                    <img src="assets/img/svg/cartaozin.svg" alt="" class="cartao img-svg" id="cartao-img">
+                    <label for="opt-cartao" class="pequeno-texto opcao-texto">Referência</label>
                 </li>
-
+    </ul>
+    </section>
                 <section class="fio-conduzido-selecionado">
 
                     <aside class="inserir-imagem">
@@ -63,7 +65,7 @@
                         <form action="" lass="inserir-dados-form">
                             <p class="pequeno-texto">Arraste ou procure a imagem nos arquivos</p>
                             <button class="insira-imagem">
-                                <img src="" alt="" class="inserir-img">
+                                <img src="../soliciteEncomenda/assets/img/img/inserirImagem.png" alt="" class="inserir-img">
                             </button>
                         </form>
                     </aside>
@@ -78,9 +80,9 @@
                         </form>
                             <div class="inserir-seu-dados">
                                 <p class="pequeno-texto">Largura</p>
-                                <label for="" class="background-tag inserir-altura"></label>
+                                <input for="" class="background-tag inserir-altura"></input>
                                 <p class="pequeno-texto">Altura</p>
-                                <label for="" class="background-tag inserir-largura"></label>
+                                <input for="" class="background-tag inserir-largura"></input>
                             </div>
                         <!-- </form> -->
                     </aside>
@@ -90,7 +92,7 @@
                     <form action="" class="inserir-imagem">
                         <p class="pequeno-texto">Arraste ou procure a imagem nos arquivos</p>
                         <button class="insira-imagem">
-                            <img src="" alt="" class="inserir-img">
+                            <img src="../soliciteEncomenda/assets/img/img/inserirImagem.png" alt="" class="inserir-img">
                         </button>
                     </form>
 
@@ -98,12 +100,12 @@
                         <aside class="lado-esquerdo">
                             <div class="cor">
                                 <p class="pequeno-texto">Cor</p>
-                                <label for="" class="background-tag inserir-cor"></label>
+                                <input for="" class="background-tag inserir-cor"></input>
                             </div>
 
                             <div class="tamanho">
                                 <p class="pequeno-texto selecione-tamanho">Tamanho</p>
-                                <select name="Euem" class="input" id="background-tag selecao-tamanho">
+                                <select name="Euem" class="background-tag" id="selecao-tamanho">
                                     <option value="pequeno"class="background-tag selecione-tamanho">Pequeno</option>
                                     <option value="medio"  class="background-tag selecione-tamanho">Médio</option>
                                     <option value="grande" class="background-tag selecione-tamanho">Grande</option>
@@ -112,7 +114,7 @@
 
                             <div class="insira-link">
                                 <p class="pequeno-texto">Tem algum tutorial online? <br> Insira o link abaixo</p>
-                                <label for="" class="background-tag inserir-link" ></label>
+                                <input for="" class="background-tag inserir-link" ></input>
                             </div>
                         </aside>
 
@@ -125,12 +127,12 @@
 
                         <div class="linha-especifica">
                             <p class="pequeno-texto">Deseja um tipo de linha específica?</p>
-                            <label for="" class="background-tag label-linha"></label>
+                            <input for="" class="background-tag input-linha"></input>
                         </div>
 
                         <div class="observacao">
                             <p class="pequeno-texto">Alguma observação adicional?</p>
-                            <label for="" class="background-tag label-observacao"></label>
+                            <input for="" class="background-tag input-observacao"></input>
                         </div>
                         </aside>
                     </form>
@@ -138,7 +140,5 @@
                 </section>
         </section>
     </main>
-
 </body>
-
 </html>
