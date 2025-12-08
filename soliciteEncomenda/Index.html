@@ -36,11 +36,11 @@
     <main class="tela-principal">
         <h1 class="titulo-encomenda">Solicite sua encomenda!</h1>
         <section class="tela-encomenda">
-            <h2 class="pequeno-texto">Tipo de trabalho:</h2>
+            <h2 class="pequeno-texto texto-encomenda">Tipo de trabalho:</h2>
             <section class="select">
             <div id="selecionar-Tipo-Pagamento" class="dropdown">
             <div id="selecionarPagamento-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
-                <div id="pagamentoSelecionado">Não selecionado</div>
+                <div class="pagamentoSelecionado" >Não selecionado</div>
                 <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
             </div>
             </div>
@@ -56,14 +56,14 @@
                         data-label="Cartão">
                     <label for="opt-cartao" class="pequeno-texto opcao-texto">Referência</label>
                 </li>
-    </ul>
+            </ul>
     </section>
                 <section class="fio-conduzido-selecionado">
 
                     <aside class="inserir-imagem">
-                        <h2 class="pequeno-texto">Insira o desenho em formato de pixel art:</h2>
-                        <form action="" lass="inserir-dados-form">
-                            <p class="pequeno-texto">Arraste ou procure a imagem nos arquivos</p>
+                    <h2 class="pequeno-texto" id="texto">Insira o desenho em formato de pixel art:</h2>
+                        <form action="" class="inserir-dados-form">
+                            <p class="pequeno-texto texto-inserir-imagem">Arraste ou procure a imagem nos <br>arquivos</p>
                             <button class="insira-imagem">
                                 <img src="../soliciteEncomenda/assets/img/img/inserirImagem.png" alt="" class="inserir-img">
                             </button>
@@ -71,68 +71,99 @@
                     </aside>
 
                     <aside class="inserir-dados">
-                        <h2 class="pequeno-texto">Insira a imagem de referência</h2>
-                        <form action="" class="inserir-dados-form">
+                        <div class="inserir-tamanho">
                             <p class="pequeno-texto">
-                                Qual o tamanho médio desejado para a tapeçaria
+                                Qual o tamanho médio desejado para a tapeçaria?
                                 <br>(Leve em consideração o tamanho do desenho)
                             </p>
-                        </form>
-                            <div class="inserir-seu-dados">
+                        </div>
+                        <div class="inserir-seu-dados">
+                                <form action="">
                                 <p class="pequeno-texto">Largura</p>
                                 <input for="" class="background-tag inserir-altura"></input>
+                                </form>
+
+                                <form action="">
                                 <p class="pequeno-texto">Altura</p>
                                 <input for="" class="background-tag inserir-largura"></input>
+                                </form>
+                                
                             </div>
                         <!-- </form> -->
                     </aside>
                 </section>
 
                 <section class="referencias-selecionado">
-                    <form action="" class="inserir-imagem">
-                        <p class="pequeno-texto">Arraste ou procure a imagem nos arquivos</p>
+                    <!-- <aside class="lado-esquerdo">
+                        <h2 class="pequeno-texto">Insira a imagem de referência</h2>
+                        <form action="" class="inserir-imagem">
+                        <p class="pequeno-texto texto-inserir-imagem">Arraste ou procure a imagem nos <br> arquivos</p>
                         <button class="insira-imagem">
                             <img src="../soliciteEncomenda/assets/img/img/inserirImagem.png" alt="" class="inserir-img">
                         </button>
                     </form>
+                    </aside> -->
 
-                    <form action="" class="inserir-seusdados">
-                        <aside class="lado-esquerdo">
-                            <div class="cor">
-                                <p class="pequeno-texto">Cor</p>
+                    <form action="" class="inserir-seus-dados lado-direito">
+                        <aside class="lado-esquerdo-dados">
+                            <div class="cor tabela-dados">
+                                <p class="pequeno-texto">Cor:</p>
                                 <input for="" class="background-tag inserir-cor"></input>
                             </div>
 
-                            <div class="tamanho">
-                                <p class="pequeno-texto selecione-tamanho">Tamanho</p>
-                                <select name="Euem" class="background-tag" id="selecao-tamanho">
-                                    <option value="pequeno"class="background-tag selecione-tamanho">Pequeno</option>
-                                    <option value="medio"  class="background-tag selecione-tamanho">Médio</option>
-                                    <option value="grande" class="background-tag selecione-tamanho">Grande</option>
-                                </select>
+                            <div class="tamanho tabela-dados">
+                                <!-- <p class="pequeno-texto selecione-tamanho">Tamanho:</p>
+                                <select name="Euem" class="background-tag input-texto" id="selecao-tamanho">
+                                    <option value="pequeno"class="background-tag selecione-tamanho input-texto">Pequeno</option>
+                                    <option value="medio"  class="background-tag selecione-tamanho input-texto">Médio</option>
+                                    <option value="grande" class="background-tag selecione-tamanho input-texto">Grande</option>
+                                </select> -->
+                                <h2 class="pequeno-texto">Tamanho:</h2>
+            <section class="select selectTamanho">
+            <div id="selecionar-Tipo-Pagamento" class="dropdown">
+            <div id="selecionarPagamento-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
+                <div id="pagamentoSelecionado" class="pagamentoSelecionado input-texto">Não selecionado</div>
+                <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
+            </div>
+            </div>
+
+            <ul id="opcoes" role="listbox" aria-labelledby="pagamentoSelecionado">
+                <li class="opcao" role="option">
+                    <input type="radio" name="selecionado" id="opt-pix" value="selecionadoFioConduzido" data-label="Pix">
+                    <label for="opt-pix" class="pequeno-texto opcao-texto">Fio conduzido</label>
+                </li>
+
+                <li class="opcao" role="option">
+                    <input type="radio" name="selecionado" id="opt-cartao" value="selecionadoReferencia"
+                        data-label="Cartão">
+                    <label for="opt-cartao" class="pequeno-texto opcao-texto">Referência</label>
+                </li>
+            </ul>
                             </div>
 
-                            <div class="insira-link">
+                            <div class="insira-link tabela-dados">
                                 <p class="pequeno-texto">Tem algum tutorial online? <br> Insira o link abaixo</p>
-                                <input for="" class="background-tag inserir-link" ></input>
+                                <input for="" class="background-tag inserir-link input-texto" ></input>
                             </div>
                         </aside>
 
-                        <aside class="lado-direito">
-                        <div class="linha">
+                        <aside class="lado-direito-dados">
+                        <div class="linha tabela-dados">
                             <p class="pequeno-texto">A linha precisa ser hipoalergênica?</p>
-                            <button class="background-tag botao-sim"> Sim</button>
-                            <button class="background-tag botao-nao"> Não</button>
+                            <div class="botoes">
+                            <button class="background-tag botao-sim input-texto"> Sim</button>
+                            <button class="background-tag botao-nao input-texto"> Não</button>
+                            </div>
                         </div>
 
-                        <div class="linha-especifica">
+                        <div class="linha-especifica tabela-dados">
                             <p class="pequeno-texto">Deseja um tipo de linha específica?</p>
-                            <input for="" class="background-tag input-linha"></input>
+                            <input for="" class="background-tag input-linha input-texto"></input>
                         </div>
 
-                        <div class="observacao">
+                        <div class="observacao tabela-dados">
                             <p class="pequeno-texto">Alguma observação adicional?</p>
-                            <input for="" class="background-tag input-observacao"></input>
+                            <input for="" class="background-tag input-observacao input-texto"></input>
                         </div>
                         </aside>
                     </form>
