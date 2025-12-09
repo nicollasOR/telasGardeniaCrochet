@@ -115,35 +115,22 @@ button {
     cursor: pointer;
 }
 
-.tela-principal
-{
-    margin: 2% 3%;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(2rem, 3vw, 4rem);
-    
-    width: clamp(90%, 91%, 100%);
-    height: clamp(80vh, 90vh, 100%);
 
-    border-radius: .2vw;
-}
-
-
-.titulo-encomenda
+h1
 {
     font-family: var(--Lobster);
     font-weight: 500;
     font-size: clamp(2rem, 3vw, 4rem);
-    color: var(--marrom);
+    color: var(--marrom); 
 }
 
-.pequeno-texto
+.texto-subtitulo
 {
     font-family: var(--Poppins);
     font-size: clamp(1rem, 1.5vw, 2vw);
     font-weight: 600;
     color: var(--marrom);
-    white-space: nowrap;
+    white-space: nowrap;   
 }
 
 .background-tag
@@ -153,30 +140,40 @@ button {
     
     background-color: var(--cinza-azulado);
     border: .2vw solid var(--borda-azul-escura);
-    border-radius: .5vw;
+    border-radius: .5vw;   
+}
+
+
+
+.tela-principal
+{
+    margin: 2% 3%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 3vw, 4rem);
+    
+    /* width: clamp(90%, 94%, 100%);
+    height: clamp(80vh, 90vh, 100%); */
+    border: 5px solid black;
+
+    border-radius: .2vw;
 }
 
 .tela-encomenda
-{
-    border: .5vw solid var(--cinza-azulado);
-    border-radius: .2vw;
-    height: clamp(90%, 95%, 100%);
-    /* height: clamp(50vw, 60vh, 95vw); */
-    width: clamp(90%, 100%, 100%);
-
-    margin: 0 0% 0 clamp(1%, 1.9%, 2%);
-    padding: 2% 2% 0% 2%;
-}
-
-.texto-encomenda
-{
-    margin-bottom: clamp(.5vh, 2vw, 2rem);
+    {
+        border-radius: .5vw;   
+        width: 100%;
+        height: 100%;
+        margin: 0% 0%;
+        border: .4vw solid var(--borda-azul-escura);
+        padding: 0 5%;
 }
 
 .select
 {
     background-color: var(--cinza-azulado);
-    width: clamp(10%, 20%, 39%);
+    width: clamp(5%, 19%, 39%);
+    /* width: clamp(10%, 20%, 39%); */
     /* height: clamp(5rem, 7vw, 10rem); */
     margin-bottom: clamp(1vw, 2.5vw, 3rem);
 
@@ -186,7 +183,7 @@ button {
 
 #selecionarTrabalho-menu {
     display: flex;
-    padding: clamp(.5rem, 1vw, 2rem);
+    padding: clamp(.1rem, .2vw, 2rem) clamp(.09rem, .3vw, 1rem);
     align-items: center;
     justify-content: space-between;
     border-radius: .5vw;
@@ -213,18 +210,19 @@ button {
 #trabalhoSelecionado {
     /* font-size: clamp(1rem, 1.4vw, 2vw); */
     font-family: var(--Poppins);
-    font-size: 1.5vw;
+    font-size: clamp(1rem, 1.5vw, 2vw);
     font-weight: 600;
     color: var(--marrom);
     white-space: nowrap;
     margin-right: 5%;
+    padding-left: .4vw;
 }
 
 #seta-img {
   transition: transform .25s ease;
   /* width: clamp(.8rem, 2vw, 5rem);
   height: clamp(.8rem, 2vw, 5rem); */
-  width: clamp(10%, 12%, 15%);
+  width: clamp(5%, 8%, 15%);
   height: clamp(8%, 12%, 15%);
 }
 
@@ -253,7 +251,7 @@ button {
 
     border-radius: .5vw;
     margin-bottom: clamp(.1vw, 1vw, 3rem);
-    padding: clamp(1vh, 1.5vw, 2rem) clamp(1vw, 1.1vw, 1.4rem);
+    padding: clamp(1vh, 1.5vw, 2rem) clamp(.8vw, .9vw, 1.4rem);
     background-color: var(--cinza-azulado);
     
     cursor: pointer;
@@ -340,108 +338,16 @@ button {
   border-radius: .5vw;
 }
 
-.fio-conduzido-selecionado
+
+.trabalhoSelecionado
 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(1rem, 2vw, 3rem);
-    display: none;
-}
-
-
-
-.inserir-imagem
-{
-    display: flex;
-    /* border: 2px solid black; */
-    width: 100%;
-    height: clamp(30vw, 60vw, 70rem);
-    margin-bottom: 5%;
-    flex-direction: column;
-    align-content: center;
-    gap: 3vw;
-    flex-wrap: wrap;
-}
-
-
-.inserir-dados-form
-{
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-
-    background-color: var(--cinza-azulado);
-    border: .3vw solid var(--borda-azul-escura);
-    width: 90%;
-    height: 60%;
-}
-
-.texto-inserir-imagem
-{
-    font-size: clamp(1vw, 1.4vw, 2vw);
-    text-align: center;
-}
-
-.insira-imagem
-{
-    margin-right: auto;
-    margin-left: auto;
     
 }
 
-
-.inserir-img
+.fio-conduzido
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: clamp(40%, 90%, 90%);
-    height: (50%, 60%, 65%);
-    padding: 2% 2%;
-}
-
-
-.inserir-dados
-{
-    display: flex;
-    flex-direction: column;
-    gap: 3vw;
-    
-}
-
-.inserir-tamanho
-{
-    text-align: center;
-}
-
-.inserir-seu-dados
-{
-    display: inline-flex;
-    gap: 30%;
-}
-
-
-/* 
-    ================================================
-                REFERENCIAS SELECIONADO
-    ===============================================
-*/
-.referencias-selecionado
-{
-    display: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5%; 
-}
-
-.inserir-seus-dados
-{
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2vw;
 }
 
 .lado-esquerdo
@@ -449,103 +355,58 @@ button {
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    border: 2vw solid black;
-    padding: clamp(1vw, 1.2vw, 1.5vw);
+    width: 100%;
+    justify-content: center;
 }
 
-.referencias-texto
-{
-    font-size: 1.5vw;
-    text-align: center;
-}
-
-.texto-inserir-imagem
-{
-
-}
-
-.inserir-imagem
+.inserir-dados-form
 {
     border: .5vw solid var(--borda-azul-escura);
-    border-radius: .4vw;
     background-color: var(--cinza-azulado);
-    width: 100%;
-    /* height: clamp(10vh, 20vh,); */
-    /* height: 400px; */
-    height: 25vw;
-    padding: 5% 15%;
+    margin-left: -2%;
+    width: 70%;
+    padding-top: 5%;
+    margin-bottom: 10%;
+}
+
+.texto-esquerda
+{
+    text-align: center;
 }
 
 .insira-imagem
 {
-
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    margin-bottom: 20%;
+    gap: 4vw;
 }
 
 .inserir-img
 {
-    width: 14vw;
+    width: 100%;
 }
 
-
-
-
-.tabela-dados
+.lado-direito
 {
     display: flex;
     flex-direction: column;
-    gap: clamp(1vw, 1.2vw, 2.2vw);
+    align-items: center;
 }
 
-.botoes 
+.inserir-tamanhos
 {
     display: inline-flex;
-    gap: 10%;
-    
+    gap: 4vw;
+
 }
 
-.botao-nao, .botao-sim
+
+.referencia
 {
-    width: 5vw;
-
+    display: none;
 }
 
-.input-texto
-{
-    font-size: clamp(1vw, 1.1vw, 1.5vw);
-    font-family: var(--Poppins);
-    font-weight: 600;
-    color: var(--marrom);
-}
-
-.input-texto-botao
-{
-    padding-left: 0;
-}
-
-.input-texto-inserir
-{
-    padding-left: 1vw;
-
-}
-
-#selecao-tamanho option
-{
-    background-color: black;
-    border-radius: 2vw;    
-}
-
-
-.selectTamanho
-{
-    background-color: var(--cinza-azulado);
-    height: clamp(10%, 45%, 70%);
-    width: clamp(10%, 70%, 100%);
-    margin-bottom: clamp(1vw, 2.5vw, 3rem);
-    border: .4vw solid var(--borda-azul-escura);
-    border-radius: .9vw;
-}
-
-
-
-
-/* #selecionar-pag */

@@ -38,9 +38,9 @@
         <section class="tela-encomenda">
             <h2 class="pequeno-texto texto-encomenda">Tipo de trabalho:</h2>
             <section class="select">
-            <div id="selecionar-Tipo-Pagamento" class="dropdown">
-            <div id="selecionarPagamento-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
-                <div class="pagamentoSelecionado" >Não selecionado</div>
+            <div id="selecionar-Tipo-Trabalho" class="dropdown">
+            <div id="selecionarTrabalho-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
+                <div id="trabalhoSelecionado" class="" >Não selecionado</div>
                 <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
             </div>
             </div>
@@ -94,21 +94,21 @@
                 </section>
 
                 <section class="referencias-selecionado">
-                    <!-- <aside class="lado-esquerdo">
-                        <h2 class="pequeno-texto">Insira a imagem de referência</h2>
+                    <aside class="lado-esquerdo">
+                        <h2 class="pequeno-texto referencias-texto">Insira a imagem de referência</h2>
                         <form action="" class="inserir-imagem">
                         <p class="pequeno-texto texto-inserir-imagem">Arraste ou procure a imagem nos <br> arquivos</p>
                         <button class="insira-imagem">
                             <img src="../soliciteEncomenda/assets/img/img/inserirImagem.png" alt="" class="inserir-img">
                         </button>
                     </form>
-                    </aside> -->
+                    </aside>
 
                     <form action="" class="inserir-seus-dados lado-direito">
                         <aside class="lado-esquerdo-dados">
                             <div class="cor tabela-dados">
                                 <p class="pequeno-texto">Cor:</p>
-                                <input for="" class="background-tag inserir-cor"></input>
+                                <input for="" class="background-tag inserir-cor input-texto-inserir"></input>
                             </div>
 
                             <div class="tamanho tabela-dados">
@@ -120,14 +120,14 @@
                                 </select> -->
                                 <h2 class="pequeno-texto">Tamanho:</h2>
             <section class="select selectTamanho">
-            <div id="selecionar-Tipo-Pagamento" class="dropdown">
-            <div id="selecionarPagamento-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
-                <div id="pagamentoSelecionado" class="pagamentoSelecionado input-texto">Não selecionado</div>
+            <div id="selecionar-Tipo-Trabalho" class="dropdown">
+            <div id="selecionarTrabalho-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
+                <div id="trabalhoSelecionado" class="trabalhoSelecionado input-texto">Não selecionado</div>
                 <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
             </div>
             </div>
 
-            <ul id="opcoes" role="listbox" aria-labelledby="pagamentoSelecionado">
+            <ul id="opcoes" role="listbox" aria-labelledby="trabalhoSelecionado">
                 <li class="opcao" role="option">
                     <input type="radio" name="selecionado" id="opt-pix" value="selecionadoFioConduzido" data-label="Pix">
                     <label for="opt-pix" class="pequeno-texto opcao-texto">Fio conduzido</label>
@@ -143,7 +143,7 @@
 
                             <div class="insira-link tabela-dados">
                                 <p class="pequeno-texto">Tem algum tutorial online? <br> Insira o link abaixo</p>
-                                <input for="" class="background-tag inserir-link input-texto" ></input>
+                                <input for="" class="background-tag inserir-link input-texto input-texto-inserir" ></input>
                             </div>
                         </aside>
 
@@ -158,12 +158,12 @@
 
                         <div class="linha-especifica tabela-dados">
                             <p class="pequeno-texto">Deseja um tipo de linha específica?</p>
-                            <input for="" class="background-tag input-linha input-texto"></input>
+                            <input for="" class="background-tag input-linha input-texto input-texto-inserir"></input>
                         </div>
 
                         <div class="observacao tabela-dados">
                             <p class="pequeno-texto">Alguma observação adicional?</p>
-                            <input for="" class="background-tag input-observacao input-texto"></input>
+                            <input for="" class="background-tag input-observacao input-texto input-texto-inserir"></input>
                         </div>
                         </aside>
                     </form>
