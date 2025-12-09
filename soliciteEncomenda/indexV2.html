@@ -37,139 +37,148 @@
         <h1 class="texto-titulo"> Solicite sua encomenda!</h1>
         <main class="tela-encomenda">
             <h2 class="texto-subtitulo">Tipo de trabalho:</h2>
-            
+
             <section class="select">
-            <div id="selecionar-Tipo-Trabalho" class="dropdown">
-            <div id="selecionarTrabalho-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
-                <div id="trabalhoSelecionado" class="texto-subtitulo    " >Não selecionado</div>
-                <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
-            </div>
-            </div>
+                <div id="selecionar-Tipo-Trabalho" class="dropdown">
+                    <div id="selecionarTrabalho-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
+                        <div id="trabalhoSelecionado" class="texto-subtitulo    ">Não selecionado</div>
+                        <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
+                    </div>
+                </div>
 
-            <ul id="opcoes" role="listbox" aria-labelledby="pagamentoSelecionado">
-                <li class="opcao" role="option">
-                    <input type="radio" name="selecionado" id="opt-pix" value="selecionadoFioConduzido" data-label="Pix">
-                    <label for="opt-pix" class="texto-subtitulo opcao-texto">Fio conduzido</label>
-                </li>
+                <ul id="opcoes" role="listbox" aria-labelledby="pagamentoSelecionado">
+                    <li class="opcao" role="option">
+                        <input type="radio" name="selecionado" id="opt-pix" value="selecionadoFioConduzido"
+                            data-label="Pix">
+                        <label for="opt-pix" class="texto-subtitulo opcao-texto">Fio conduzido</label>
+                    </li>
 
-                <li class="opcao" role="option">
-                    <input type="radio" name="selecionado" id="opt-cartao" value="selecionadoReferencia"
-                        data-label="Cartão">
-                    <label for="opt-cartao" class="texto-subtitulo opcao-texto">Referência</label>
-                </li>
-            </ul>
+                    <li class="opcao" role="option">
+                        <input type="radio" name="selecionado" id="opt-cartao" value="selecionadoReferencia"
+                            data-label="Cartão">
+                        <label for="opt-cartao" class="texto-subtitulo opcao-texto">Referência</label>
+                    </li>
+                </ul>
             </section>
 
             <!-- <section class="trabalhoSelecionado"> -->
-                    <!-- 
+            <!-- 
                 
                 FIO CONDUZIDO SELECIONADO
                     -->
-                <article class="fio-conduzido">
-                    
+            <article class="fio-conduzido">
+
                 <aside class="inserir-imagem lado-esquerdo">
                     <h3 class="texto-subtitulo">Insira a imagem de referência: </h3>
                     <div class="inserir-dados-form">
-                    <h3 class="texto-subtitulo texto-esquerda">Arraste ou procure a imagem nos <br> arquivos</h3>
-                    <button class="insira-imagem">
-                    <img src="assets/img/img/inserirImagem.png" alt="" class="inserir-img">
-                    </button>
+                        <h3 class="texto-subtitulo texto-esquerda">Arraste ou procure a imagem nos <br> arquivos</h3>
+                        <button class="insira-imagem">
+                            <img src="assets/img/img/inserirImagem.png" alt="" class="inserir-img">
+                        </button>
                     </div>
                 </aside>
 
-                    <aside class="lado-direito lado-direito-fio-conduzido">
-                        <h2 class="texto-subtitulo">
-                            Qual o tamanho médio desejado para a tapeçaria 
-                            <br> (leve em consideração o tamanho do desenho)
-                        </h2>
-                        <div class="inserir-tamanhos">
-                            <form action="">
-                                <h3 class="texto-subtitulo">Largura: </h3>
-                                <input type="text" class="background-tag inserir-largura">
-                            </form>
-                            
-                            <form action="">
-                                <h3 class="texto-subtitulo">Altura: </h3>
-                                <input type="text" class="background-tag inserir-altura">
-                            </form>
-                        </div>
-                    </aside>
-                </article>
-                    <!-- 
+                <aside class="lado-direito lado-direito-fio-conduzido">
+                    <h2 class="texto-subtitulo">
+                        Qual o tamanho médio desejado para a tapeçaria
+                        <br> (leve em consideração o tamanho do desenho)
+                    </h2>
+                    <div class="inserir-tamanhos">
+                        <form action="">
+                            <h3 class="texto-subtitulo">Largura: </h3>
+                            <input type="text" class="background-tag input-texto inserir-largura">
+                        </form>
+
+                        <form action="">
+                            <h3 class="texto-subtitulo">Altura: </h3>
+                            <input type="text" class="background-tag input-texto inserir-altura">
+                        </form>
+                    </div>
+                </aside>
+            </article>
+            <!-- 
                 
                 REFERENCIA SELECIONADO
 
                     -->
-                <article class="referencia">
-                    <aside class="inserir-imagem lado-esquerdo">
+            <article class="referencia">
+                <aside class="inserir-imagem lado-esquerdo">
                     <h3 class="texto-subtitulo">Insira a imagem de referência: </h3>
                     <div class="inserir-dados-form">
-                    <h3 class="texto-subtitulo texto-esquerda">Arraste ou procure a imagem nos <br> arquivos</h3>
-                    <button class="insira-imagem">
-                    <img src="assets/img/img/inserirImagem.png" alt="" class="inserir-img">
-                    </button>
+                        <h3 class="texto-subtitulo texto-esquerda">Arraste ou procure a imagem nos <br> arquivos</h3>
+                        <button class="insira-imagem">
+                            <img src="assets/img/img/inserirImagem.png" alt="" class="inserir-img">
+                        </button>
                     </div>
                 </aside>
 
                 <aside class="lado-direito referencia-selecionado">
                     <!--  -->
-                    <div class="cor tabela-dados">
-                    <h2 class="texto-subtitulo"> Cor:</h2>
-                    <input for="" class="background-tag inserir-cor input-texto-inserir"></input>
-                    </div>
-                    <!-- DROPDOWN -->
-                    <div class="tamanho tabela-dados">
-                    <h2 class="texto-subtitulo">Tamanho:</h2>
-            <section class="select selectTamanho">
-            <div id="selecionar-Tipo-Trabalho" class="dropdown">
-            <div id="selecionarTrabalho-menu" class="menu-toggle" tabindex="0" aria-haspopup="listbox">
-                <div id="trabalhoSelecionado" class="trabalhoSelecionado input-texto">Não selecionado</div>
-                <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt="" id="seta-img">
-            </div>
-            </div>
+                    <section class="lado-esquerdo-referencia referencia-lados">
+                        <div class="cor tabela-dados">
+                            <h2 class="texto-subtitulo"> Cor:</h2>
+                            <input for="" class="background-tag input-texto input-cor"></input>
+                        </div>
+                        <!-- DROPDOWN -->
+                        <div class="input-tamanho tabela-dados ">
+                            <h2 class="texto-subtitulo">Tamanho:</h2>
+                            <section class="select selectTamanho">
+                                <div id="selecionar-Tipo-Trabalho" class="dropdown">
+                                    <div id="selecionarTrabalho-menu" class="menu-toggle" tabindex="0"
+                                        aria-haspopup="listbox">
+                                        <div id="trabalhoSelecionado" class="trabalhoSelecionado input-texto">Não
+                                            selecionado</div>
+                                        <img src="../soliciteEncomenda/assets/img/svg/setaEncomenda.svg" alt=""
+                                            id="seta-img">
+                                    </div>
+                                </div>
 
-            <ul id="opcoes" role="listbox" aria-labelledby="trabalhoSelecionado">
-                <li class="opcao" role="option">
-                    <input type="radio" name="selecionado" id="opt-pix" value="selecionadoFioConduzido" data-label="Pix">
-                    <label for="opt-pix" class="texto-subtitulo opcao-texto">Fio conduzido</label>
-                </li>
+                                <ul id="opcoes" role="listbox" aria-labelledby="trabalhoSelecionado">
+                                    <li class="opcao" role="option">
+                                        <input type="radio" name="selecionado" id="opt-pix"
+                                            value="selecionadoFioConduzido" data-label="Pix">
+                                        <label for="opt-pix" class="texto-subtitulo opcao-texto">Fio conduzido</label>
+                                    </li>
 
-                <li class="opcao" role="option">
-                    <input type="radio" name="selecionado" id="opt-cartao" value="selecionadoReferencia"
-                        data-label="Cartão">
-                    <label for="opt-cartao" class="texto-subtitulo opcao-texto">Referência</label>
-                </li>
-            </ul>
+                                    <li class="opcao" role="option">
+                                        <input type="radio" name="selecionado" id="opt-cartao"
+                                            value="selecionadoReferencia" data-label="Cartão">
+                                        <label for="opt-cartao" class="texto-subtitulo opcao-texto">Referência</label>
+                                    </li>
+                                </ul>
+
+
+
+                            </section>
+                        </div>
+                        <div class="insira-link tabela-dados">
+                            <p class="texto-subtitulo">Tem algum tutorial online? <br> Insira o link abaixo</p>
+                            <input for="" class="background-tag input-link input-texto"></input>
+                        </div>
+                    </section>
+                    <section class="lado-direito-referencia referencia-lados">
+                            <div class="linha tabela-dados">
+                                <p class="texto-subtitulo">A linha precisa ser hipoalergênica?</p>
+                                <div class="botoes">
+                                    <button class="background-tag botao-referencia input-texto"> Sim</button>
+                                    <button class="background-tag botao-referencia input-texto"> Não</button>
+                                </div>
                             </div>
 
-                            <div class="insira-link tabela-dados">
-                                <p class="texto-subtitulo">Tem algum tutorial online? <br> Insira o link abaixo</p>
-                                <input for="" class="background-tag inserir-link input-texto input-texto-inserir" ></input>
+                            <div class="linha-especifica tabela-dados">
+                                <p class="texto-subtitulo">Deseja um tipo de linha específica?</p>
+                                <input for=""
+                                    class="background-tag input-linha input-texto input-texto-inserir"></input>
                             </div>
-                        </aside>
 
-                        <aside class="lado-direito-dados">
-                        <div class="linha tabela-dados">
-                            <p class="texto-subtitulo">A linha precisa ser hipoalergênica?</p>
-                            <div class="botoes">
-                            <button class="background-tag botao-sim input-texto"> Sim</button>
-                            <button class="background-tag botao-nao input-texto"> Não</button>
+                            <div class="observacao tabela-dados">
+                                <p class="texto-subtitulo">Alguma observação adicional?</p>
+                                <input for=""
+                                    class="background-tag input-observacao input-texto input-texto-inserir"></input>
                             </div>
-                        </div>
-
-                        <div class="linha-especifica tabela-dados">
-                            <p class="texto-subtitulo">Deseja um tipo de linha específica?</p>
-                            <input for="" class="background-tag input-linha input-texto input-texto-inserir"></input>
-                        </div>
-
-                        <div class="observacao tabela-dados">
-                            <p class="texto-subtitulo">Alguma observação adicional?</p>
-                            <input for="" class="background-tag input-observacao input-texto input-texto-inserir"></input>
-                        </div>
-
+                    </section>
                 </aside>
-
-                </article>
+            </article>
 
             <!-- </section> -->
 
@@ -177,4 +186,5 @@
         </main>
     </main>
 </body>
+
 </html>

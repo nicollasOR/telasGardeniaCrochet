@@ -127,7 +127,8 @@ h1
 .texto-subtitulo
 {
     font-family: var(--Poppins);
-    font-size: clamp(1rem, 1.5vw, 2vw);
+    /* font-size: clamp(1rem, 1.5vw, 2vw); */
+    font-size: clamp(.8vw, 1.4vw, 2vw);
     font-weight: 600;
     color: var(--marrom);
     white-space: nowrap;   
@@ -136,7 +137,8 @@ h1
 .background-tag
 {
     width: clamp(10rem, 15vw, 20rem);
-    height: clamp(2rem, 2.5vw, 4rem);
+    /* height: clamp(2rem, 2.5vw, 4rem); */
+    height: clamp(40%, 2.5vw, 4rem);
     
     background-color: var(--cinza-azulado);
     border: .2vw solid var(--borda-azul-escura);
@@ -210,7 +212,7 @@ h1
 #trabalhoSelecionado {
     /* font-size: clamp(1rem, 1.4vw, 2vw); */
     font-family: var(--Poppins);
-    font-size: clamp(1rem, 1.5vw, 2vw);
+    font-size: clamp(.5rem, 1.5vw, 2vw);
     font-weight: 600;
     color: var(--marrom);
     white-space: nowrap;
@@ -348,6 +350,7 @@ h1
 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    display: none;
 }
 
 .lado-esquerdo
@@ -364,7 +367,7 @@ h1
     border: .5vw solid var(--borda-azul-escura);
     background-color: var(--cinza-azulado);
     margin-left: -2%;
-    width: 70%;
+    width: clamp(20vw, 28vw, 40vw);
     padding-top: 5%;
     margin-bottom: 10%;
 }
@@ -372,6 +375,7 @@ h1
 .texto-esquerda
 {
     text-align: center;
+    font-size: clamp(1vw, 1.5vw, 2vw);
 }
 
 .insira-imagem
@@ -387,7 +391,8 @@ h1
 
 .inserir-img
 {
-    width: 100%;
+    width: clamp(1vw, 15vw, 50vw);
+    
 }
 
 .lado-direito
@@ -408,5 +413,76 @@ h1
 .referencia
 {
     display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
+.input-texto
+{
+    font-size: clamp(.5rem, 1.5vw, 2.9vw);
+    font-family: var(--Poppins);
+    font-weight: 600;
+    padding-left: .5vw;
+    color: wheat;
+}
+
+.referencia-selecionado
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    margin-left: 5%;
+    align-items: normal;
+}
+
+.referencia-lados
+{
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+}
+
+.tabela-dados
+{
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+}
+.botoes
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    /* OPCIONAL Acima */
+    gap: 4vw;
+}
+.botao-referencia
+{
+    width: 6vw;
+    padding-left: 1vw;
+    padding-right: 1vw; 
+}
+
+.input-cor
+{
+    width: 24vw;
+}
+
+.input-link
+{
+    width: 20vw;
+}
+
+.input-linha
+{
+    /* width: 27vw; */
+    width: 100%;
+
+}
+
+.input-observacao
+{
+    /* width: 27vw; */
+    width: 90%;
+}
