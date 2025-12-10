@@ -39,15 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function estaAberto(open) {
     if (!selecionarTrabalho) return;
-    if(!selecionarTamanho) return;
     if (open) {
       selecionarTrabalho.classList.add('open');
-      selecionarTamanho.classList.add('open');
       if (checkboxTrabalho) checkboxTrabalho.checked = true;
       toggleTrabalho.setAttribute('aria-expanded', 'true');
       
-      if (checkboxTamanho) checkboxTamanho.checked = true;
-      toggleTamanho.setAttribute('aria-expanded', 'true');
+     
 
       const checked = document.querySelector('.opcao input:checked') || radios[0];
       if (checked) checked.focus();
@@ -57,11 +54,26 @@ document.addEventListener('DOMContentLoaded', () => {
       if (checkboxTrabalho) checkboxTrabalho.checked = false;
       toggleTrabalho.setAttribute('aria-expanded', 'false');
 
-      selecionarTamanho.classList.remove('open');
-      if (checkboxTamanho) checkboxTamanho.checked = false;
-      toggleTamanho.setAttribute('aria-expanded', 'false');
+
     }
   }
+
+  function estaAbertoTamanho(open)
+  {
+    if(!selecionarTamanho) return;
+    if(open){
+      selecionarTamanho.classList.add('open');
+    const checked = document.querySelector('.opcao input:checked') || radios[0];
+      if (checked) checked.focus();
+    
+    }
+    else{
+ selecionarTamanho.classList.remove('open');
+      if (checkboxTamanho) checkboxTamanho.checked = false;
+      toggleTamanho.setAttribute('aria-expanded', 'false');
+    
+  }
+}
 
   // atualiza visibilidade das 3 divs com base no radio selecionado
   function atualizarSelecao() {
@@ -80,8 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (referenciaOpt) referenciaOpt.style.display = 'flex';
       if (fioConduzidoOPT) fioConduzidoOPT.style.display = 'none';
     }
+  }
 
-    const optPequeno = document.getElementById('opt-Pequeno');
+
+  function atualizarSelecaoTamanho()
+{
+   const optPequeno = document.getElementById('opt-Pequeno');
     const optMedio = document.getElementById('opt-Medio');
     const optGrande = document.getElementById('opt-Grande');
 
@@ -104,10 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if(optPequeno) optPequeno.style.display = 'none';
       if(optMedio) optMedio.style.display = 'none';
     }
-
-
-  }
-
+}
   function trocarCorSelecionado(opcaoLi) {
     const todas = document.querySelectorAll('.opcao');
     todas.forEach(li => {
@@ -137,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   estaAberto(false);
+  estaAbertoTamanho(false);
   trabalhoSelecionado.textContent = textoInicial;
   
 //   pagamentoSelecionado.style.color = '#AFA8B6'; //! atencao
@@ -183,15 +197,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+
   toggleTamanho.addEventListener('click', (variavelAmbiente) => {
     variavelAmbiente.stopPropagation();
     const estaAbertoTamanho = selecionarTamanho.classList.contains('open');
     if (estaAbertoTamanho) {
       limparSelecao();
-      estaAberto(false);
+      estaAbertoTamanho(false);
     }
     else {
-      estaAberto(true);
+      estaAbertoTamanho(true);
     }
   });
 
@@ -229,6 +245,17 @@ document.addEventListener('DOMContentLoaded', () => {
       atualizarSelecao();
     });
 
+    radio.addEventListener('change', () => {
+      const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
+      if(label)
+      {
+        tamanhoSelecionado.textContent = label;
+        tamanhoSelecionado.style.color = '#FBF9FE';
+      }
+      atualizarSelecaoTamanho();
+
+    });
+
     if (li) {
       li.addEventListener('focusin', () => {
         li.classList.add('focus');
@@ -251,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.addEventListener(evtName, (ev) => {
         ev.stopPropagation();
         ev.preventDefault();
-      }, { capture: true, passive: false });
+      }, {capture: true, passive: false });
     });
   });
 

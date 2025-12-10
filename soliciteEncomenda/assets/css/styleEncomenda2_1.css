@@ -189,6 +189,12 @@ h1
 
 }
 
+
+.selectTamanho
+{
+    width: 16vw;
+}
+
 #selecionarTrabalho-menu, #selecionarTamanho-menu {
     display: flex;
     padding: clamp(.1rem, .2vw, 2rem) clamp(.09rem, .3vw, 1rem);
@@ -496,118 +502,174 @@ h1
 
 @media (max-width: 425px)
 {
- header {
+
+    body, .tela-encomenda, .tela-principal
+    {
+        display: flex;
+        flex-direction: column;
     }
 
-    .sub-texto {
-        font-size: 2vw;
-    }   
+    .sub-texto
+    {
+        font-size: 2.3vw;
+    }
 
-.lista-menu {
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 1vw;
-    background-color: rgba(var(--cinza-azuladoRGB), 0.85);
-    width: 100%;
-    height: clamp(2rem, 15vw, 7rem);
-    padding: 0 2vw;
-}
+    .lista-menu
+    {
+        gap: 1vw;
+        height: clamp(2rem, 15vw, 7rem);
+    }
 
-.linha-separadora {
-    width: 1vw;
-    background-color: var(--cinza-claro-azulado);
-    height: 86%;
-}
+    .linha-separadora
+    {
+        width: 1vw;
+        height: 86%;
+    }
 
-.nav-links
+    .nav-links
+    {
+        gap: 1.5vw;
+    }
 
- {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5vw;
-}
+    #Contato
+    {
+        margin-right: 2vw;
+    }
 
-.logo {
-    width: 15vw;
-    height: auto;
-    margin-top: 3%;
-    padding: 8%;
-}
+    .logo
+    {
+        width: 15vw;
+        padding: 8%;
+        margin-top: 3%;
+    }
 
+    #perfil
+    {
+        display: none;
+    }
 
-.perfil-links {
-    display: inline-flex;
-    align-items: center;
-    gap: 2vw;
-}
+    .login
+    {
+        width: 15vw;
+        padding: 8%;
+        margin-top: 3%;
+    }
 
-#perfil {
-    font-size: 2.5vw;
-    font-weight: 700;
-    font-family: var(--Poppins);
-}
+    h1
+    {
+        align-self: center;
+        font-size: 7vw;
+    }
 
-.login {
-    width: 7vw;
-    height: auto;
-    margin: auto;
-    padding: auto;
-}
+    .tela-principal{
+        gap: clamp(2rem, 3vw, 4rem);
+    }
+    
+    .tela-encomenda
+    {
+        width: 100%;
+        height: clamp(140vw, 80vh, 120rem);
+        flex-wrap: nowrap;
+        align-items: center;
+        border: 1vw solid var(--borda-azul-escura);
+    }
 
-.texto-titulo {
-        font-size: 6.5vw;
-        margin-top: 10%;
-        margin-bottom: 0;
+    .texto-subtitulo
+    {
+        /* font-size: clamp(.8vw, 3vw, 5vw); */
+        font-size: clamp(.8vw, 2.5vw, 5vw);
+    }
+
+    .fio-conduzido, .referencia
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
 
-.tela-principal {
-    margin: 2% 3%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: clamp(2rem, 3vw, 4rem);
-    border-radius: .2vw;
-    align-items: center;
-}
-
-    .texto-titulo {
-        font-size: 6.5vw;
-        margin-bottom: 0;
+    .lado-esquerdo, .lado-direito
+    {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        text-align: center;
     }
 
+    .inserir-dados-form
+    {
+        width: 65%;
+        align-self: center;
+        margin-left: 2%;
+    }
 
-.tela-encomenda {
-    border-radius: .5vw;
-    display: flex;
-    width: 77%;
-    height: clamp(140vw, 80vh, 120rem);
-    margin: 0% 0%;
-    border: 1vw solid var(--borda-azul-escura);
-    padding: 0 5%;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
+    .insira-imagem
+    {
+        margin-bottom: 10%;
+    }
 
-.texto-subtitulo {
-    font-family: var(--Poppins);
-    /* font-size: clamp(1rem, 1.5vw, 2vw); */
-    font-size: clamp(.8vw, 2.5vw, 4vw);
-    font-weight: 600;
-    color: var(--marrom);
-    white-space: nowrap;
-}
+    .inserir-img
+    {
+        width: 50%;
+    }
 
-.referencia, .fio-conduzido
-{
-    display: flex;
-    flex-direction: column;
-    gap: 4vw;
-}
+    .referencia-selecionado
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .referencia-selecionado
+    {
+        align-self: flex-start;
+        width: 80%;
+        gap: 10%;
+    }
+
+    .background-tag
+    {
+        align-self: center;
+        /* width: 40%; */
+    }
+
+    .input-texto
+    {
+        font-size:clamp(.5rem, 2.5vw, 4vw)
+    }
+    .botoes
+    {
+        justify-content: space-around;
+    }
+    .botao-referencia
+    {
+        width: 9vw;
+    }
+
+    .select
+    {
+        width: 28vw;
+    }
+    
+    .opcao
+    {
+        font-size:clamp(1vh, 3vw, 4rem) clamp(.8vw, 1.5vw, 2rem);
+    }
+
+    #trabalhoSelecionado, #tamanhoSelecionado
+    {
+        font-size: clamp(.5rem, 2.5vw, 4vw);
+    }
+
+    .referencia
+    {
+        display: none;
+    }
+    .fio-conduzido
+    {
+        display: flex;
+        flex-direction: column;
+    }
 
 }
