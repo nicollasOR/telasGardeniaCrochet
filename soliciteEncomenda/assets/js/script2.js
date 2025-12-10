@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const radios = document.querySelectorAll('.opcao input[type="radio"]');
   //? const que seria das selecoes do droptables
 
-
+  const referenciaSelecionado = document.querySelector('.referencia');
+  const fioConduzidoSelecionado = document.querySelector('.fio-conduzido');
 
   //! Divs que seriam do droptable, ou seja, 
   //! começam em display none até que seja selecionada alguma
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function limparSelecao() {
     radios.forEach(radio => { radio.checked = false; });
     pagamentoSelecionado.textContent = textoInicial;
-    // pagamentoSelecionado.style.color = '#AFA8B6'; //cor basica 👌 //! Atencao
+    pagamentoSelecionado.style.color = 'var(--marrom)'; //cor basica 👌 //! Atencao
     trocarCorSelecionado(null);
     atualizarSelecao(); // Chamando para esconder todas as divs
   }
@@ -91,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   estaAberto(false);
   pagamentoSelecionado.textContent = textoInicial;
-//   pagamentoSelecionado.style.color = '#AFA8B6'; //! atencao
   atualizarSelecao(); // voltamos ao estado inicial
 
   // Aplica efeito visual de focus e desativa pointer events na imagem enquanto focado
@@ -164,7 +164,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
       if (label) {
         pagamentoSelecionado.textContent = label;
-        pagamentoSelecionado.style.color = '#FBF9FE';
+      }
+      if(label == `Fio conduzido`)
+      {
+        fioConduzidoSelecionado.style.display = `grid`;
+        referenciaSelecionado.style.display = `none`;
       }
       atualizarSelecao();
     });

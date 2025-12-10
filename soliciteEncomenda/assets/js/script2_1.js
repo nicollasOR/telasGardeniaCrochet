@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     selecionarTrabalho.classList.add('dropdown');
   }
 
-  if(selecionarTamanho && !selecionarTamanho.classList.contains('dropdown')){
-    selecionarTamanho.classList.add('dropdown');
-  }
+  // if(selecionarTamanho && !selecionarTamanho.classList.contains('dropdown')){
+  //   selecionarTamanho.classList.add('dropdown');
+  // }
 
   const textoInicial = 'Não selecionado';
 
@@ -58,22 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function estaAbertoTamanho(open)
-  {
-    if(!selecionarTamanho) return;
-    if(open){
-      selecionarTamanho.classList.add('open');
-    const checked = document.querySelector('.opcao input:checked') || radios[0];
-      if (checked) checked.focus();
+//   function estaAbertoTamanho(open)
+//   {
+//     if(!selecionarTamanho) return;
+//     if(open){
+//       selecionarTamanho.classList.add('open');
+//     const checked = document.querySelector('.opcao input:checked') || radios[0];
+//       if (checked) checked.focus();
     
-    }
-    else{
- selecionarTamanho.classList.remove('open');
-      if (checkboxTamanho) checkboxTamanho.checked = false;
-      toggleTamanho.setAttribute('aria-expanded', 'false');
+//     }
+//     else{
+//  selecionarTamanho.classList.remove('open');
+//       if (checkboxTamanho) checkboxTamanho.checked = false;
+//       toggleTamanho.setAttribute('aria-expanded', 'false');
     
-  }
-}
+//   }
+// }
 
   // atualiza visibilidade das 3 divs com base no radio selecionado
   function atualizarSelecao() {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  function atualizarSelecaoTamanho()
+  // function atualizarSelecaoTamanho()
 {
    const optPequeno = document.getElementById('opt-Pequeno');
     const optMedio = document.getElementById('opt-Medio');
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   estaAberto(false);
-  estaAbertoTamanho(false);
+  // estaAbertoTamanho(false);
   trabalhoSelecionado.textContent = textoInicial;
   
 //   pagamentoSelecionado.style.color = '#AFA8B6'; //! atencao
@@ -199,17 +199,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  toggleTamanho.addEventListener('click', (variavelAmbiente) => {
-    variavelAmbiente.stopPropagation();
-    const estaAbertoTamanho = selecionarTamanho.classList.contains('open');
-    if (estaAbertoTamanho) {
-      limparSelecao();
-      estaAbertoTamanho(false);
-    }
-    else {
-      estaAbertoTamanho(true);
-    }
-  });
+  // toggleTamanho.addEventListener('click', (variavelAmbiente) => {
+  //   variavelAmbiente.stopPropagation();
+  //   const estaAbertoTamanho = selecionarTamanho.classList.contains('open');
+  //   if (estaAbertoTamanho) {
+  //     limparSelecao();
+  //     estaAbertoTamanho(false);
+  //   }
+  //   else {
+  //     estaAbertoTamanho(true);
+  //   }
+  // });
 
 
   opcoes.addEventListener('click', (variavelAmbiente) => {
@@ -245,16 +245,16 @@ document.addEventListener('DOMContentLoaded', () => {
       atualizarSelecao();
     });
 
-    radio.addEventListener('change', () => {
-      const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
-      if(label)
-      {
-        tamanhoSelecionado.textContent = label;
-        tamanhoSelecionado.style.color = '#FBF9FE';
-      }
-      atualizarSelecaoTamanho();
+    // radio.addEventListener('change', () => {
+    //   const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
+    //   if(label)
+    //   {
+    //     tamanhoSelecionado.textContent = label;
+    //     tamanhoSelecionado.style.color = '#FBF9FE';
+    //   }
+    //   atualizarSelecaoTamanho();
 
-    });
+    // });
 
     if (li) {
       li.addEventListener('focusin', () => {
