@@ -7,7 +7,7 @@
     <title>Solicite sua Encomenda!</title>
     <link rel="stylesheet" href="assets/css/styleGlobal.css">
     <link rel="stylesheet" href="assets/css/styleEncomenda2_1.css">
-    <script src="../soliciteEncomenda/assets/js/script2_1.js" defer></script>
+    <script src="../soliciteEncomenda/assets/js/script2.js" defer></script>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
     <main class="tela-principal">
         <h1 class="texto-titulo"> Solicite sua encomenda!</h1>
         <main class="tela-encomenda">
-            <h2 class="texto-subtitulo">Tipo de trabalho:</h2>
+            <h2 class="texto-subtitulo texto-titulo-encomenda">Tipo de trabalho:</h2>
 
             <section class="select">
                 <div id="selecionar-Tipo-Trabalho" class="dropdown">
@@ -49,13 +49,13 @@
                 <ul id="opcoes" class="opcoes" role="listbox" aria-labelledby="pagamentoSelecionado">
                     <li class="opcao" role="option">
                         <input type="radio" name="selecionado" id="opt-fio-conduzido" value="selecionadoFioConduzido"
-                            data-label="Pix">
+                            data-label="Fio Conduzido">
                         <label for="opt-fio-conduzido" class="texto-subtitulo opcao-texto">Fio conduzido</label>
                     </li>
 
                     <li class="opcao" role="option">
                         <input type="radio" name="selecionado" id="opt-referencia" value="selecionadoReferencia"
-                            data-label="Cartão">
+                            data-label="Referência">
                         <label for="opt-referencia" class="texto-subtitulo opcao-texto">Referência</label>
                     </li>
                 </ul>
@@ -136,19 +136,19 @@
                                 <ul id="opcoes" class="opcoes" role="listbox" aria-labelledby="trabalhoSelecionado">
                                     <li class="opcao" role="option">
                                         <input type="radio" name="selecionado" id="opt-Pequeno"
-                                            value="selecionadoFioConduzido" data-label="Pix">
+                                            value="selecionadoFioConduzido" data-label="Pequeno">
                                         <label for="opt-Pequeno" class="texto-subtitulo opcao-texto">Pequeno</label>
                                     </li>
 
                                     <li class="opcao" role="option">
                                         <input type="radio" name="selecionado" id="opt-Medio"
-                                            value="selecionadoReferencia" data-label="Cartão">
+                                            value="selecionadoReferencia" data-label="Médio">
                                         <label for="opt-Medio" class="texto-subtitulo opcao-texto">Médio</label>
                                     </li>
 
                                     <li class="opcao" role="option">
                                         <input type="radio" name="selecionado" id="opt-Grande"
-                                            value="selecionadoReferencia" data-label="Cartão">
+                                            value="selecionadoReferencia" data-label="Grande">
                                         <label for="opt-Grande" class="texto-subtitulo opcao-texto">Grande</label>
                                     </li>
                                 </ul>
