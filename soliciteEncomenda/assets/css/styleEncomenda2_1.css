@@ -163,7 +163,6 @@ h1
     
     /* width: clamp(90%, 94%, 100%);
     height: clamp(80vh, 90vh, 100%); */
-    border: 5px solid black;
 
     border-radius: .2vw;
 }
@@ -492,4 +491,123 @@ h1
 {
     /* width: 27vw; */
     width: 90%;
+}
+
+
+@media (max-width: 425px)
+{
+ header {
+    }
+
+    .sub-texto {
+        font-size: 2vw;
+    }   
+
+.lista-menu {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    background-color: rgba(var(--cinza-azuladoRGB), 0.85);
+    width: 100%;
+    height: clamp(2rem, 15vw, 7rem);
+    padding: 0 2vw;
+}
+
+.linha-separadora {
+    width: 1vw;
+    background-color: var(--cinza-claro-azulado);
+    height: 86%;
+}
+
+.nav-links
+
+ {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.logo {
+    width: 15vw;
+    height: auto;
+    margin-top: 3%;
+    padding: 8%;
+}
+
+
+.perfil-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+#perfil {
+    font-size: 2.5vw;
+    font-weight: 700;
+    font-family: var(--Poppins);
+}
+
+.login {
+    width: 7vw;
+    height: auto;
+    margin: auto;
+    padding: auto;
+}
+
+.texto-titulo {
+        font-size: 6.5vw;
+        margin-top: 10%;
+        margin-bottom: 0;
+    }
+
+
+.tela-principal {
+    margin: 2% 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(2rem, 3vw, 4rem);
+    border-radius: .2vw;
+    align-items: center;
+}
+
+    .texto-titulo {
+        font-size: 6.5vw;
+        margin-bottom: 0;
+    }
+
+
+.tela-encomenda {
+    border-radius: .5vw;
+    display: flex;
+    width: 77%;
+    height: clamp(140vw, 80vh, 120rem);
+    margin: 0% 0%;
+    border: 1vw solid var(--borda-azul-escura);
+    padding: 0 5%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-subtitulo {
+    font-family: var(--Poppins);
+    /* font-size: clamp(1rem, 1.5vw, 2vw); */
+    font-size: clamp(.8vw, 2.5vw, 4vw);
+    font-weight: 600;
+    color: var(--marrom);
+    white-space: nowrap;
+}
+
+.referencia, .fio-conduzido
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+}
+
 }

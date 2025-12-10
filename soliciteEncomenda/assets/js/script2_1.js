@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const selecionarPagamento = document.getElementById('selecionar-Tipo-Trabalho'); // container (deve existir)
-  const checkbox = document.getElementById('mostrarTipoPagamento'); //* Conferir depois se continua com ele (checkbox opcional)
-  const toggle = document.getElementById('selecionarTrabalho-menu'); // área clicável
-  const opcoes = document.getElementById('opcoes'); // UL (irmã do checkbox)
-  const pagamentoSelecionado = document.getElementById('trabalhoSelecionado');
+  const selecionarTrabalho = document.getElementById('selecionar-Tipo-Trabalho'); // container (deve existir)
+  const checkboxTrabalho = document.getElementById('mostrarTipoTrabalho'); //* Conferir depois se continua com ele (checkbox opcional)
+  const toggleTrabalho = document.getElementById('selecionarTrabalho-menu'); // área clicável
+  const trabalhoSelecionado = document.getElementById('trabalhoSelecionado');
+
+  const selecionarTamanho = document.getElementById('selecionar-Tipo-Tamanho');
+  const checkboxTamanho = document.getElementById('mostrarTipoTamanho');
+  const toggleTamanho = document.getElementById('selecionarTamanho-menu');
+  const tamanhoSelecionado = document.getElementById('tamanhoSelecionado');
+
+  const opcoes = document.querySelectorAll('.opcao2'); // UL (irmã do checkbox)
   const radios = document.querySelectorAll('.opcao input[type="radio"]');
-  //? const que seria das selecoes do droptables
 
 
 
@@ -22,24 +27,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
 
-  if (selecionarPagamento && !selecionarPagamento.classList.contains('dropdown')) {
-    selecionarPagamento.classList.add('dropdown');
+  if (selecionarTrabalho && !selecionarTrabalho.classList.contains('dropdown')) {
+    selecionarTrabalho.classList.add('dropdown');
+  }
+
+  if(selecionarTamanho && !selecionarTamanho.classList.contains('dropdown')){
+    selecionarTamanho.classList.add('dropdown');
   }
 
   const textoInicial = 'Não selecionado';
 
   function estaAberto(open) {
-    if (!selecionarPagamento) return;
+    if (!selecionarTrabalho) return;
+    if(!selecionarTamanho) return;
     if (open) {
-      selecionarPagamento.classList.add('open');
-      if (checkbox) checkbox.checked = true;
-      toggle.setAttribute('aria-expanded', 'true');
+      selecionarTrabalho.classList.add('open');
+      selecionarTamanho.classList.add('open');
+      if (checkboxTrabalho) checkboxTrabalho.checked = true;
+      toggleTrabalho.setAttribute('aria-expanded', 'true');
+      
+      if (checkboxTamanho) checkboxTamanho.checked = true;
+      toggleTamanho.setAttribute('aria-expanded', 'true');
+
       const checked = document.querySelector('.opcao input:checked') || radios[0];
       if (checked) checked.focus();
     } else {
-      selecionarPagamento.classList.remove('open');
-      if (checkbox) checkbox.checked = false;
-      toggle.setAttribute('aria-expanded', 'false');
+
+      selecionarTrabalho.classList.remove('open');
+      if (checkboxTrabalho) checkboxTrabalho.checked = false;
+      toggleTrabalho.setAttribute('aria-expanded', 'false');
+
+      selecionarTamanho.classList.remove('open');
+      if (checkboxTamanho) checkboxTamanho.checked = false;
+      toggleTamanho.setAttribute('aria-expanded', 'false');
     }
   }
 
@@ -47,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function atualizarSelecao() {
     const fioConduzidoOPT = document.getElementById('opt-fio-conduzido');
     const referenciaOpt = document.getElementById('opt-referencia');
-
 
     if (fioConduzidoOPT) fioConduzidoOPT.style.display = 'none';
     if (referenciaOpt) referenciaOpt.style.display = 'none';
@@ -61,6 +80,32 @@ document.addEventListener('DOMContentLoaded', () => {
       if (referenciaOpt) referenciaOpt.style.display = 'flex';
       if (fioConduzidoOPT) fioConduzidoOPT.style.display = 'none';
     }
+
+    const optPequeno = document.getElementById('opt-Pequeno');
+    const optMedio = document.getElementById('opt-Medio');
+    const optGrande = document.getElementById('opt-Grande');
+
+    if(optPequeno) optPequeno.style.display = 'none';
+    if(optMedio) optMedio.style.display = 'none';
+    if(optGrande) optGrande.style.display = 'none';
+
+    if(optPequeno && optPequeno.checked){
+      if(optPequeno) optPequeno.style.display = 'flex';
+      if(optMedio) optMedio.style.display = 'none';
+      if(optGrande) optGrande.style.display = 'none';
+    }
+    if(optMedio && optMedio.checked){
+      if(optMedio) optMedio.style.display = 'flex';
+      if(optPequeno) optPequeno.style.display = 'none';
+      if(optGrande) optGrande.style.display = 'none';
+    }
+    if(optGrande && optGrande.checked){
+      if(optGrande) optGrande.style.display = 'flex';
+      if(optPequeno) optPequeno.style.display = 'none';
+      if(optMedio) optMedio.style.display = 'none';
+    }
+
+
   }
 
   function trocarCorSelecionado(opcaoLi) {
@@ -78,19 +123,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function limparSelecao() {
     radios.forEach(radio => { radio.checked = false; });
-    pagamentoSelecionado.textContent = textoInicial;
+    trabalhoSelecionado.textContent = textoInicial;
+    tamanhoSelecionado.textContent = textoInicial;
+
     // pagamentoSelecionado.style.color = '#AFA8B6'; //cor basica 👌 //! Atencao
     trocarCorSelecionado(null);
     atualizarSelecao(); // Chamando para esconder todas as divs
   }
 
-  if (!selecionarPagamento || !toggle || !opcoes || !pagamentoSelecionado) {
+  if (!selecionarTrabalho || !toggleTrabalho || !opcoes || !trabalhoSelecionado) {
     // console.error('Dropdown: elemento(s) faltando. IDs esperados: selecionar-Tipo-Pagamento, selecionarPagamento-menu, opcoes, pagamentoSelecionado.');
     return 'Dropdown: elemento(s) faltando. IDs esperados: selecionar-Tipo-Pagamento, selecionarPagamento-menu, opcoes, pagamentoSelecionado.';
   }
 
   estaAberto(false);
-  pagamentoSelecionado.textContent = textoInicial;
+  trabalhoSelecionado.textContent = textoInicial;
+  
 //   pagamentoSelecionado.style.color = '#AFA8B6'; //! atencao
   atualizarSelecao(); // voltamos ao estado inicial
 
@@ -124,13 +172,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
 
 
-  toggle.addEventListener('click', (variavelAmbiente) => {
+  toggleTrabalho.addEventListener('click', (variavelAmbiente) => {
     variavelAmbiente.stopPropagation(); // evitar que o clique feche o dropdown imediatamente
-    const isOpen = selecionarPagamento.classList.contains('open');
-    if (isOpen) {
+    const estaAbertoTrabalho = selecionarTrabalho.classList.contains('open');
+    if (estaAbertoTrabalho) {
       limparSelecao();
       estaAberto(false);
     } else {
+      estaAberto(true);
+    }
+  });
+
+  toggleTamanho.addEventListener('click', (variavelAmbiente) => {
+    variavelAmbiente.stopPropagation();
+    const estaAbertoTamanho = selecionarTamanho.classList.contains('open');
+    if (estaAbertoTamanho) {
+      limparSelecao();
+      estaAberto(false);
+    }
+    else {
       estaAberto(true);
     }
   });
@@ -141,10 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // teclado: Enter/Space abre/fecha; se fechar via toggle, limpa
-  toggle.addEventListener('keydown', (variavelAmbiente) => {
+  toggleTrabalho.addEventListener('keydown', (variavelAmbiente) => {
     if (variavelAmbiente.key === 'Enter' || variavelAmbiente.key === ' ') {
       variavelAmbiente.preventDefault();
-      const isOpen = selecionarPagamento.classList.contains('open');
+      const isOpen = selecionarTrabalho.classList.contains('open');
       if (isOpen) {
         limparSelecao();
         estaAberto(false);
@@ -163,8 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
     radio.addEventListener('change', () => {
       const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
       if (label) {
-        pagamentoSelecionado.textContent = label;
-        pagamentoSelecionado.style.color = '#FBF9FE';
+        trabalhoSelecionado.textContent = label;
+        trabalhoSelecionado.style.color = '#FBF9FE';
       }
       atualizarSelecao();
     });
@@ -199,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // fechar ao clicar fora: se o clique NÃO estiver dentro do container e nem dentro do UL #opcoes
   document.addEventListener('click', () => {
     // quando clicar fora, apenas fechar (não limpar)
-    if (selecionarPagamento.classList.contains('open')) {
+    if (selecionarTrabalho.classList.contains('open')) {
       estaAberto(false);
     }
   });
@@ -207,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ESC global: fecha sem limpar
   // bagulho besta inclusive.
   document.addEventListener('keydown', (tecla) => {
-    if ((tecla.key === 'Escape' || tecla.key === 'Esc') && selecionarPagamento.classList.contains('open')) {
+    if ((tecla.key === 'Escape' || tecla.key === 'Esc') && selecionarTrabalho.classList.contains('open')) {
       estaAberto(false);
     }
   });
