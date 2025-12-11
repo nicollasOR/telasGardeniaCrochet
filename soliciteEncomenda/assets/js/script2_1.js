@@ -88,14 +88,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function atualizarSelecao() {
     const fioConduzidoOPT = document.getElementById('opt-fio-conduzido');
     const referenciaOpt = document.getElementById('opt-referencia');
+    const isMobile = window.innerWidth < 426;
 
     if (fioConduzidoOPT && fioConduzidoOPT.checked) {
-      if (fioConduzidoSection) fioConduzidoSection.style.display = 'grid';
+      if (fioConduzidoSection) {
+        fioConduzidoSection.style.display = isMobile ? 'flex' : 'grid';
+        if (isMobile) fioConduzidoSection.style.flexDirection = 'column';
+      }
       if (referenciaSection) referenciaSection.style.display = 'none';
     } 
     else if (referenciaOpt && referenciaOpt.checked) 
     {
-      if (referenciaSection) referenciaSection.style.display = 'grid';
+      if (referenciaSection) {
+        referenciaSection.style.display = isMobile ? 'flex' : 'grid';
+        if (isMobile) referenciaSection.style.flexDirection = 'column';
+      }
       if (fioConduzidoSection) fioConduzidoSection.style.display = 'none';
     }
     else {

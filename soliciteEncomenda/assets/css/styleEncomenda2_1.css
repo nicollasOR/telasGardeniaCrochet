@@ -172,9 +172,11 @@ h1
         border-radius: .5vw;   
         width: 100%;
         height: 100%;
+        height: 80vh;
         margin: 0% 0%;
         border: .4vw solid var(--borda-azul-escura);
         padding: 0 5%;
+
 }
 
 .select
@@ -376,6 +378,7 @@ h1
     gap: 2vw;
     width: 100%;
     justify-content: center;
+    height: 60vh;
 }
 
 .inserir-dados-form
@@ -438,6 +441,7 @@ h1
     font-family: var(--Poppins);
     font-weight: 600;
     padding-left: .5vw;
+    /* margin-bottom: 10%; */
     color: var(--marrom);
 }
 
@@ -487,6 +491,7 @@ h1
 .input-link
 {
     width: 80%;
+    margin-bottom: 10%;
 }
 
 .input-linha
@@ -626,6 +631,11 @@ h1
         align-items: center;
     }
 
+    .referencia-lados
+    {
+        height: 31vh;
+    }
+
     .referencia-selecionado
     {
         align-self: flex-start;
@@ -650,6 +660,7 @@ h1
     .botao-referencia
     {
         width: 9vw;
+        height: 2vh;
     }
 
     .select
