@@ -232,7 +232,7 @@ h1
     padding-left: .4vw;
 }
 
-#seta-img {
+#seta-img, #seta-img-tamanho {
   transition: transform .25s ease;
   /* width: clamp(.8rem, 2vw, 5rem);
   height: clamp(.8rem, 2vw, 5rem); */
@@ -241,7 +241,7 @@ h1
 }
 
 /* lista de opções - inicialmente escondida */
-#opcoes {
+#opcoes, #opcoesTamanho {
 
   border-radius: .5vw;
   /* width: clamp(10rem, 13vw, 20rem); */
@@ -316,12 +316,17 @@ h1
 }
 
 /* open state: #opcoes é irmão direto (adjacent) do container .dropdown */
-.dropdown.open + #opcoes {
+#selecionar-Tipo-Trabalho.open + #opcoes {
+  display: block;
+}
+
+#selecionar-Tipo-Tamanho.open + #opcoesTamanho {
   display: block;
 }
 
 /* seta rotaciona quando a div container tem .open */
-.dropdown.open #seta-img {
+.dropdown.open #seta-img,
+.dropdown.open #seta-img-tamanho {
   transform: rotate(180deg);
 }
 

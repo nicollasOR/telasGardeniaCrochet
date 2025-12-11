@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const tamanhoSelecionado = document.getElementById('tamanhoSelecionado');
 
   const opcoes = document.getElementById('opcoes'); // UL de opções
-  const radios = document.querySelectorAll('.opcao input[type="radio"]');
+  const radios = document.querySelectorAll('#opcoes .opcao input[type="radio"]');
+
+  const opcoesTamanho = document.getElementById('opcoesTamanho'); // UL de opções de tamanho
+  const radiosTamanho = document.querySelectorAll('#opcoesTamanho .opcao input[type="radio"]');
 
 
 
@@ -35,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     selecionarTrabalho.classList.add('dropdown');
   }
 
-  // if(selecionarTamanho && !selecionarTamanho.classList.contains('dropdown')){
-  //   selecionarTamanho.classList.add('dropdown');
-  // }
+  if(selecionarTamanho && !selecionarTamanho.classList.contains('dropdown')){
+    selecionarTamanho.classList.add('dropdown');
+  }
 
   const textoInicial = 'Não selecionado';
 
@@ -62,22 +65,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-//   function estaAbertoTamanho(open)
-//   {
-//     if(!selecionarTamanho) return;
-//     if(open){
-//       selecionarTamanho.classList.add('open');
-//     const checked = document.querySelector('.opcao input:checked') || radios[0];
-//       if (checked) checked.focus();
+  function estaAbertoTamanho(open)
+  {
+    if(!selecionarTamanho) return;
+    if(open){
+      selecionarTamanho.classList.add('open');
+      if (checkboxTamanho) checkboxTamanho.checked = true;
+      toggleTamanho.setAttribute('aria-expanded', 'true');
     
-//     }
-//     else{
-//  selecionarTamanho.classList.remove('open');
-//       if (checkboxTamanho) checkboxTamanho.checked = false;
-//       toggleTamanho.setAttribute('aria-expanded', 'false');
+      const checked = document.querySelector('#opcoesTamanho .opcao input:checked') || radiosTamanho[0];
+      if (checked) checked.focus();
     
-//   }
-// }
+    }
+    else{
+      selecionarTamanho.classList.remove('open');
+      if (checkboxTamanho) checkboxTamanho.checked = false;
+      toggleTamanho.setAttribute('aria-expanded', 'false');
+    }
+  }
 
   // atualiza visibilidade das 3 divs com base no radio selecionado
   function atualizarSelecao() {
@@ -143,11 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function limparSelecao() {
     radios.forEach(radio => { radio.checked = false; });
     trabalhoSelecionado.textContent = textoInicial;
-    tamanhoSelecionado.textContent = textoInicial;
 
     // pagamentoSelecionado.style.color = '#AFA8B6'; //cor basica 👌 //! Atencao
     trocarCorSelecionado(null);
     atualizarSelecao(); // Chamando para esconder todas as divs
+  }
+
+  function limparSelecaoTamanho() {
+    radiosTamanho.forEach(radio => { radio.checked = false; });
+    tamanhoSelecionado.textContent = textoInicial;
   }
 
   if (!selecionarTrabalho || !toggleTrabalho || !opcoes || !trabalhoSelecionado) {
@@ -156,8 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   estaAberto(false);
-  // estaAbertoTamanho(false);
+  estaAbertoTamanho(false);
   trabalhoSelecionado.textContent = textoInicial;
+  tamanhoSelecionado.textContent = textoInicial;
   
 //   pagamentoSelecionado.style.color = '#AFA8B6'; //! atencao
   atualizarSelecao(); // voltamos ao estado inicial
@@ -205,21 +215,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // toggleTamanho.addEventListener('click', (variavelAmbiente) => {
-  //   variavelAmbiente.stopPropagation();
-  //   const estaAbertoTamanho = selecionarTamanho.classList.contains('open');
-  //   if (estaAbertoTamanho) {
-  //     limparSelecao();
-  //     estaAbertoTamanho(false);
-  //   }
-  //   else {
-  //     estaAbertoTamanho(true);
-  //   }
-  // });
+  if (toggleTamanho) {
+    toggleTamanho.addEventListener('click', (variavelAmbiente) => {
+      variavelAmbiente.stopPropagation();
+      const isOpenTamanho = selecionarTamanho.classList.contains('open');
+      if (isOpenTamanho) {
+        limparSelecaoTamanho();
+        estaAbertoTamanho(false);
+      }
+      else {
+        estaAbertoTamanho(true);
+      }
+    });
+  }
 
 
   if (opcoes) {
     opcoes.addEventListener('click', (variavelAmbiente) => {
+      variavelAmbiente.stopPropagation();
+    });
+  }
+
+  if (opcoesTamanho) {
+    opcoesTamanho.addEventListener('click', (variavelAmbiente) => {
       variavelAmbiente.stopPropagation();
     });
   }
@@ -253,16 +271,31 @@ document.addEventListener('DOMContentLoaded', () => {
       atualizarSelecao();
     });
 
-    // radio.addEventListener('change', () => {
-    //   const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
-    //   if(label)
-    //   {
-    //     tamanhoSelecionado.textContent = label;
-    //     tamanhoSelecionado.style.color = '#FBF9FE';
-    //   }
-    //   atualizarSelecaoTamanho();
+    if (li) {
+      li.addEventListener('focusin', () => {
+        li.classList.add('focus');
+        aplicarEstiloFocus(li);
+      });
 
-    // });
+      li.addEventListener('focusout', () => {
+        li.classList.remove('focus');
+        removerEstiloFocus(li);
+      });
+    }
+  });
+
+  // Event listeners para os radios de tamanho
+  radiosTamanho.forEach(radio => {
+    const li = radio.closest('.opcao');
+
+    radio.addEventListener('change', () => {
+      const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
+      if(label)
+      {
+        tamanhoSelecionado.textContent = label;
+        tamanhoSelecionado.style.color = '#FBF9FE';
+      }
+    });
 
     if (li) {
       li.addEventListener('focusin', () => {
@@ -297,13 +330,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selecionarTrabalho.classList.contains('open')) {
       estaAberto(false);
     }
+    if (selecionarTamanho && selecionarTamanho.classList.contains('open')) {
+      estaAbertoTamanho(false);
+    }
   });
 
   // ESC global: fecha sem limpar
-  // bagulho besta inclusive.
   document.addEventListener('keydown', (tecla) => {
-    if ((tecla.key === 'Escape' || tecla.key === 'Esc') && selecionarTrabalho.classList.contains('open')) {
-      estaAberto(false);
+    if ((tecla.key === 'Escape' || tecla.key === 'Esc')) {
+      if (selecionarTrabalho.classList.contains('open')) {
+        estaAberto(false);
+      }
+      if (selecionarTamanho && selecionarTamanho.classList.contains('open')) {
+        estaAbertoTamanho(false);
+      }
     }
   });
 });
