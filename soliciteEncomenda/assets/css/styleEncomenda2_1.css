@@ -360,9 +360,8 @@ h1
 
 .fio-conduzido
 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     display: none;
+    grid-template-columns: 1fr 1fr;
 }
 
 .lado-esquerdo
@@ -425,7 +424,6 @@ h1
 .referencia
 {
     display: none;
-    display: grid;
     grid-template-columns: 1fr 1fr;
 }
 

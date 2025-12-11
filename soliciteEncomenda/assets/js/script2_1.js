@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleTamanho = document.getElementById('selecionarTamanho-menu');
   const tamanhoSelecionado = document.getElementById('tamanhoSelecionado');
 
-  const opcoes = document.querySelectorAll('.opcao2'); // UL (irmã do checkbox)
+  const opcoes = document.getElementById('opcoes'); // UL de opções
   const radios = document.querySelectorAll('.opcao input[type="radio"]');
 
 
@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const optPequeno = document.getElementById('opt-Pequeno');
     const optMedio = document.getElementById('opt-Medio');
     const optGrande = document.getElementById('opt-Grande');
+
+    // Seções de conteúdo
+    const fioConduzidoSection = document.querySelector('.fio-conduzido');
+    const referenciaSection = document.querySelector('.referencia');
 
   
 
@@ -80,17 +84,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const fioConduzidoOPT = document.getElementById('opt-fio-conduzido');
     const referenciaOpt = document.getElementById('opt-referencia');
 
-    if (fioConduzidoOPT) fioConduzidoOPT.style.display = 'none';
-    if (referenciaOpt) referenciaOpt.style.display = 'none';
-
     if (fioConduzidoOPT && fioConduzidoOPT.checked) {
-      if (fioConduzidoOPT) fioConduzidoOPT.style.display = 'flex';
-      if (referenciaOpt) referenciaOpt.style.display = 'none';
+      if (fioConduzidoSection) fioConduzidoSection.style.display = 'grid';
+      if (referenciaSection) referenciaSection.style.display = 'none';
     } 
     else if (referenciaOpt && referenciaOpt.checked) 
     {
-      if (referenciaOpt) referenciaOpt.style.display = 'flex';
-      if (fioConduzidoOPT) fioConduzidoOPT.style.display = 'none';
+      if (referenciaSection) referenciaSection.style.display = 'grid';
+      if (fioConduzidoSection) fioConduzidoSection.style.display = 'none';
+    }
+    else {
+      // Se nenhum estiver selecionado, esconde ambos
+      if (fioConduzidoSection) fioConduzidoSection.style.display = 'none';
+      if (referenciaSection) referenciaSection.style.display = 'none';
     }
   }
 
@@ -212,9 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // });
 
 
-  opcoes.addEventListener('click', (variavelAmbiente) => {
-    variavelAmbiente.stopPropagation();
-  });
+  if (opcoes) {
+    opcoes.addEventListener('click', (variavelAmbiente) => {
+      variavelAmbiente.stopPropagation();
+    });
+  }
 
   // teclado: Enter/Space abre/fecha; se fechar via toggle, limpa
   toggleTrabalho.addEventListener('keydown', (variavelAmbiente) => {
