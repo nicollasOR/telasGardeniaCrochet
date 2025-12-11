@@ -1,0 +1,327 @@
+/* Reset e variáveis (preserve suas variáveis em outro arquivo se houver) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* garante que o layout não exceda a viewport por causa de elementos larguíssimos */
+  max-width: 100%;
+}
+
+/* Geral */
+body {
+  background-color: var(--bege-claro);
+  color: var(--marrom);
+  font-family: var(--Poppins);
+}
+
+/* ================================
+   HEADER / NAV
+   ================================ */
+
+/* Header mantém a imagem de fundo ocupando a viewport */
+header {
+  background-image: url(../img/home-img.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navegação principal: layout flex com quebra quando necessário */
+.navegacao {
+  width: 100%;
+}
+
+/* lista do menu: layout flex, espaçamento controlado, evita margens enormes */
+.lista-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* distribui o logo, links e perfil */
+  gap: 1rem;
+  background-color: rgba(var(--cinza-azuladoRGB), 0.85);
+  width: 100%;
+  height: clamp(3rem, 6.5vw, 7rem);
+  padding: 0 2vw;
+  flex-wrap: wrap; /* permite empilhar em telas estreitas */
+}
+
+/* Logo responsivo com limite mínimo/máximo */
+.logo {
+  width: clamp(40px, 6vw, 80px);
+  height: auto;
+  margin: 0.4rem;
+  padding: 6%;
+  flex: 0 0 auto;
+}
+
+/* separador vertical (evita usar <hr> com fechamento no HTML) */
+.linha-separadora {
+  width: 2px;
+  background-color: var(--cinza-claro-azulado);
+  height: 50%;
+  align-self: center;
+  margin: 0 0.5rem;
+}
+
+/* Links de navegação - centralizados, sem margens laterais grandes */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* usar rem para previsibilidade */
+  justify-content: center;
+  flex: 1 1 auto; /* permitir que cresça/encolha conforme o espaço */
+  min-width: 0; /* importante para evitar overflow por filhos largos */
+}
+
+/* estilo do link */
+.link-ativo {
+  font-family: var(--Poppins);
+  font-size: 1rem; /* tamanho base em rem/px para evitar crescimento descontrolado */
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap; /* impede quebra interna do texto do link */
+}
+
+.link-ativo:hover {
+  color: var(--vermelho-escuro);
+  transition: color 0.25s ease;
+}
+
+/* Perfil (botão + imagem) */
+.perfil-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  margin-left: 0.5rem;
+}
+
+.img-perfil {
+  width: clamp(32px, 4vw, 48px);
+  height: auto;
+  padding: 0;
+  display: block;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ================================
+   BANNER / TÍTULO
+   ================================ */
+
+.secao-banner {
+  margin: 5vh 4vw 0 4vw;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+}
+
+.titulo-banner {
+  font-family: var(--Lobster);
+  font-size: clamp(2rem, 6vw, 4.5rem); /* evita fonte exagerada em telas pequenas */
+  color: var(--bege-claro);
+  font-weight: 400;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
+  line-height: 1.05;
+}
+
+.texto-sobre {
+  color: var(--bege-claro);
+  font-size: clamp(1rem, 1.6vw, 1.6rem);
+  font-weight: 600;
+  text-shadow: 7px 3px 7px rgba(0, 0, 0, 0.9);
+  margin: 1.5rem 0;
+}
+
+.link-encomenda {
+  color: var(--bege-claro);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  text-decoration: underline;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  width: fit-content;
+}
+
+.link-encomenda:hover {
+  color: var(--cinza-claro-azulado);
+  transition: color 0.3s ease, font-size 0.15s ease;
+  cursor: pointer;
+}
+
+/* ================================
+   MODELOS / GRID
+   ================================ */
+
+.modelos {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding: 4rem 2rem;
+}
+
+.cabecalhos-modelos {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.texto-titulo {
+  margin-top: 3.5rem;
+  text-align: center;
+  font-family: var(--Lobster);
+  color: var(--marrom);
+  font-weight: 400;
+  text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.5);
+  font-size: clamp(1.6rem, 3.5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.linha-divisoria {
+  width: min(60vw, 600px);
+  height: 6px;
+  background-color: var(--marrom);
+  border-radius: 1rem;
+  margin: 1rem auto;
+}
+
+/* Grid responsivo: usa auto-fit para ajustar número de colunas automaticamente */
+.modelos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1.5rem, 4vw, 5rem);
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.modelo {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modelo-img {
+  width: 100%;
+  /* manter proporção: usar aspect-ratio (suporte moderno) ou ajustar height automático */
+  aspect-ratio: 4/5;
+  border-radius: 0.8rem;
+  border: 6px solid var(--borda-azul-escura);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.modelo-texto {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--marrom);
+}
+
+/* IDs para as imagens (mantive suas referências originais) */
+#modelo1 { background-image: url(../jpeg/img1.jpeg); }
+#modelo2 { background-image: url(../jpeg/img2.jpeg); }
+#modelo3 { background-image: url(../jpeg/img3.jpeg); }
+
+.link-portifolio {
+  text-decoration: underline;
+  color: var(--marrom);
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.link-portifolio:hover {
+  color: var(--cinza-azulado);
+  transition: color 0.25s ease;
+  cursor: pointer;
+}
+
+/* ================================
+   RESPONSIVIDADE (breakpoints)
+   ================================ */
+
+/* Tela pequena: tablets / phones largos */
+@media (max-width: 900px) {
+  .lista-menu {
+    padding: 0.6rem 1rem;
+    height: auto;
+    gap: 0.6rem;
+  }
+
+  .nav-links {
+    order: 3; /* empilha abaixo logo e perfil */
+    width: 100%;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 0.6rem;
+  }
+
+  .perfil-links {
+    order: 2;
+  }
+
+  .titulo-banner {
+    font-size: clamp(1.6rem, 7vw, 3.2rem);
+  }
+
+  .texto-sobre {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .secao-banner {
+    margin: 6vh 3vw 0 3vw;
+  }
+}
+
+/* Tela pequena: celulares estreitos */
+@media (max-width: 480px) {
+  .lista-menu {
+    justify-content: space-between;
+    gap: 0.4rem;
+  }
+
+  .logo { width: 48px; }
+
+  .link-ativo {
+    font-size: 0.95rem;
+  }
+
+  .titulo-banner {
+    font-size: 2rem;
+  }
+
+  .modelos-grid {
+    gap: 1.25rem;
+  }
+}
+
+/* ================================
+   Observações e segurança contra overflow
+   ================================ */
+/* min-width:0 e flex-shrink padrão garantem que conteúdos largos não forcem overflow.
+   Se ainda ocorrer scroll horizontal, use a inspeção no devtools procurando elementos que
+   ultrapassem window.innerWidth (getBoundingClientRect().right > window.innerWidth). */

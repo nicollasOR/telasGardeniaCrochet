@@ -1,10 +1,11 @@
-/*************************************/
-/*               GERAL               */
+/* ***********************************
+               GERAL               */
 /*************************************/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    white-space: nowrap;
 }
 
 html {
@@ -24,55 +25,66 @@ header {
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    
+    provavelmente isso está causando problema no layout geral */
+
 }
+
+.navegacao,
+.nav-links,
+.perfil-links,
+.linha-separadora {
+    display: inline-flex;
+    align-items: center;
+}
+
 
 .navegacao {
     width: 100%;
-}
-
-.lista-menu {
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 2vw;
     background-color: rgba(var(--cinza-azuladoRGB), 0.85);
-    width: 100%;
-    height: clamp(2rem, 6.9vw, 7rem);
+    height: clamp(2rem, 7.5vw, 9rem);
     padding: 0 2vw;
+    list-style: none;
+    justify-content: space-around;
+
 }
 
 .logo {
-    width: 6vw;
+    width: clamp(7vw, 10vw, 12rem);
     height: auto;
-    margin: 1vw;
-    padding: 10%;
+    margin-top: 3%;
+    padding: 0 2vw;
+    border-radius: 50%;
+    object-fit: contain;
 }
 
 .linha-separadora {
-    width: 0.3vw;
+    width: .3vw;
     background-color: var(--cinza-claro-azulado);
     height: 75%;
 }
 
-.perfil-links {
-    display: inline-flex;
-    align-items: center;
-    gap: 2vw;
-}
 
 .nav-links {
+    align-items: center;
+    gap: 10vw;
+    margin: 0 2vw;
+}
+
+.perfil-links {
+    margin-left: 2vw;
     display: inline-flex;
     align-items: center;
-    /* gap: 12.5vw; */
-    gap: 20%;
-    margin: 0 19vw 0 19vw;
-
-
+    gap: 15%;
 }
+
+
 
 .link-ativo {
     font-family: var(--Poppins);
-    font-size: 1.5rem;
+    font-size: clamp(1vw, 1.5vw, 1.5rem);
     font-weight: 600;
     color: #fff;
     text-decoration: none;
@@ -83,9 +95,10 @@ header {
     transition: 0.4s;
 }
 
-#Contato {
-    margin-right: 2vw;
-    white-space: nowrap;
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .img-perfil {
@@ -95,16 +108,16 @@ header {
     padding: auto;
 }
 
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 .secao-banner {
     margin: 5vh 0vw 0vh 10vw;
     display: flex;
     flex-direction: column;
+}
+
+h1,
+h2,
+p {
+    width: fit-content;
 }
 
 .titulo-banner {
@@ -118,7 +131,7 @@ button {
 
 .texto-sobre {
     color: var(--bege-claro);
-    font-size: 1.6rem;
+    font-size: clamp(1vw, 1.5vw, 1.6rem);
     font-family: var(--Poppins);
     font-weight: 600;
     text-shadow: 7px 3px 7px rgba(0, 0, 0, 0.9);
@@ -132,7 +145,6 @@ button {
     font-weight: 600;
     text-decoration: underline;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
-    width: fit-content;
 }
 
 .link-encomenda:hover {
@@ -142,7 +154,6 @@ button {
     cursor: pointer;
 }
 
-/*************************************/
 
 
 /*************************************/
@@ -151,12 +162,8 @@ button {
 .modelos {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
-}
-
-.cabecalhos-modelos {
-    display: inline-flex;
-    text-align: center;
+    align-items: center;
+    gap: 3vw;
 }
 
 .texto-titulo {
@@ -173,7 +180,8 @@ button {
 }
 
 .linha-divisoria {
-    width: 40vw;
+    /* width: 40vw; */
+    width: 40%;
     height: 1vh;
     background-color: var(--marrom);
     border-radius: 1vw;
@@ -211,10 +219,12 @@ button {
 .modelo-texto {
     text-align: center;
     font-family: var(--Poppins);
-    font-size: 1.5rem;
+    font-size: clamp(1vw, 1.5vw, 1.5rem);
     font-weight: 600;
     color: var(--marrom);
-    margin: 1vh;
+    margin-top: .5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #modelo1 {
@@ -233,7 +243,7 @@ button {
 .link-portifolio {
     text-decoration: underline;
     color: var(--marrom);
-    font-size: 2.1rem;
+    font-size: clamp(1vw, 2.1vw, 2.1rem);
     text-align: center;
     font-family: var(--Poppins);
     font-weight: 600;
@@ -243,51 +253,68 @@ button {
     color: var(--cinza-azulado);
     transition: 0.4s;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: clamp(1vw, 2.1vw, 2rem);
 }
-
-/*************************************/
-
 
 /*************************************/
 /*            SOBRE NÓS              */
 /*************************************/
+
 .sobre-nos {
-    border: 1.8px solid #000;
-    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.4);
     margin-top: 5%;
     background-image: url(../jpeg/bolasDesktop.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: var(--cinza-claro-azulado);
+    border: 1.8px solid black;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.4);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3vw;
+    gap: 10%;
 }
 
+.painel-direito,
 .painel-esquerdo {
-    margin: 10% 0 20% 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3vw;
+    margin-top: 10%;
 }
 
+.painel-esquerdo {
+    margin: 10% 0 20% 5vw;
+
+    gap: 3vw;
+}
 
 .texto-esquerdo {
     color: var(--marrom);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: clamp(1vw, 1.4vw, 1.5rem);
     font-family: var(--Poppins);
     font-weight: 600;
 }
 
+.titulo {
+    font-family: var(--Lobster);
+    font-size: clamp(1.9vw, 2vw, 5.5rem);
+    color: var(--marrom);
+    font-weight: 400;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.5);
+    margin-bottom: 10%;
+}
+
 .painel-direito {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-right: 5vw;
+}
+
+.direito-imagem {
+    width: 20vw;
+    height: 80vh;
+    border-radius: 1vw;
+    border: 5px solid var(--borda-azul-escura);
+    padding-right: 5vw;
 }
 
 #direito-catarina {
@@ -295,28 +322,24 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 25vw;
-    height: 75vh;
-    border-radius: 1vw;
-    border: 5px solid var(--borda-azul-escura);
-    padding-right: 5vw;
+
 }
-
-/*************************************/
-
 
 /*************************************/
 /*             CONTATO               */
 /*************************************/
 .contato {
-    margin-top: 5%;
-    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 10%; */
 }
 
 .dados {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 5%;
+    gap: 30vw;
 }
 
 .informacoes {
@@ -348,7 +371,7 @@ button {
 
 .texto-informacoes {
     font-family: "Poppins", sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1vw, 1.8vw, 1.5rem);
     margin-left: 2.5%;
     font-weight: 600;
     color: var(--marrom);
@@ -358,7 +381,7 @@ button {
 .icone-contato:hover {
     cursor: pointer;
     transition: 0.3s;
-    font-size: 1.4rem;
+    font-size: 1.4vw;
 }
 
 #instagram {
@@ -374,7 +397,7 @@ button {
 .lista-inserir {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: clamp(1vw, 10vw, 2rem);
 }
 
 .inserir {
@@ -384,7 +407,7 @@ button {
 
 .titulo-caixa {
     font-family: var(--Poppins);
-    font-size: 1.5rem;
+    font-size: clamp(1vw, 1.8vw, 1.5rem);
     font-weight: 600;
     color: var(--marrom);
 }
@@ -392,12 +415,12 @@ button {
 .inserir-dados {
     border: 4px solid #362e26;
     border-radius: 10px;
-    height: 6vh;
+    height: clamp(2vw, 3vw, 6vh);
     width: 30vw;
     background-color: transparent;
 
     font-family: "Poppins", sans-serif;
-    font-size: 1.3rem;
+    font-size: clamp(1vw, 1.5vw, 1.3rem);
     font-weight: 600;
     text-align: left;
     padding-left: 2%;
@@ -406,10 +429,10 @@ button {
 
 .botao-envio {
     width: 20vw;
-    height: 5.7vh;
-    border-radius: 10px;
-    border: 4px solid var(--borda-azul-escura);
-    font-size: 1.5rem;
+    height: clamp(2vw, 3vw, 5.7vh);
+    border-radius: .8vw;
+    border: .25vw solid var(--borda-azul-escura);
+    font-size: clamp(1vw, 1.8vw, 1.5rem);
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     text-align: center;
@@ -429,15 +452,12 @@ button {
 }
 
 /*************************************/
-
-
-/*************************************/
 /*             FOOTER                */
 /*************************************/
 footer {
     background-color: rgba(var(--cinza-azuladoRGB), 0.90);
-    height: 30vh;
-    max-width: 100%;
+    height: clamp(15vw, 20vw, 30vh);
+    width: 100%;
 }
 
 .rodape-conteudo {
@@ -459,8 +479,12 @@ footer {
 }
 
 nav {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     list-style: none;
+    /* 
+    display: inline-flex;
+    gap: 40%; */
 }
 
 .lista-rodape {
@@ -474,20 +498,20 @@ nav {
 
 .titulo-footer {
     font-weight: 600;
-    font-size: 1.4rem;
-    color: white;
+    font-size: 1.4vw;
+    color: var(--branco);
     text-decoration: none;
     margin-bottom: 5%;
-    font-family: var(--Poppins), 'Courier New', Courier, monospace;
+    font-family: var(--Poppins);
 }
 
 .nav-lists {
     color: var(--marrom);
     text-decoration: none;
     font-family: var(--Poppins);
-    font-size: 1rem;
+    font-size: 1.1vw;
     font-weight: 600;
-    margin-bottom: 1.6vh;
+    margin-bottom: clamp(1vw, 1.4vw, 1.6vh);
 }
 
 .nav-lists:hover {
@@ -496,10 +520,21 @@ nav {
     font-size: 1.1rem;
 }
 
+.logo-gardenia-crochet {
+    width: clamp(6vw, 7.5vw, 12vw);
+}
+
+#lista-rodape1 {}
+
+#lista-rodape2 {
+    margin-left: 20%;
+}
+
 .procurar {
+    margin-left: 60%;
     background-color: var(--bege-claro);
-    border-radius: 10px;
-    width: 40%;
+    border-radius: .8vw;
+    width: 100%;
     height: 42.5%;
     text-align: start;
     font-family: var(--Lobster);
@@ -527,12 +562,12 @@ nav {
 .procurar-enviar {
     width: 6vw;
     height: 100%;
-    border-radius: 0px 10px 10px 0;
+    border-radius: 0px .8vw .8vw 0;
     background-color: var(--marrom);
 }
 
 .procurar-botao {
-    width: 1.6rem;
+    width: 2vw;
 }
 
 .linha-footer {
@@ -553,124 +588,201 @@ nav {
     margin: 5px auto 5px 4.9vw;
 }
 
-/*************************************/
+@media (max-width: 425px) {
 
-
-/*************************************/
-/*          RESPONSIVIDADE           */
-/*************************************/
-
-@media (max-width: 768px) {
-    header {
-        height: clamp(25vw, 25rem, 70vw);
-    }
-
-    .subtitulo-banner-sobre {
-        font-size: 1.9vw;
-    }
-
-
-    .linha-divisoria {
-        margin-top: 5vh;
-        margin-left: auto;
-        margin-right: auto;
-        width: 60vw;
-        height: 0.6vh;
-        background-color: var(--cinza-azulado);
-        border-radius: 1vw;
-    }
-
-    .modelo-img {
-        height: 50vh;
-    }
-
-    .sobre-nos {
-        height: 70vh;
-        background-image: url(../jpeg/WhatsApp\ Image\ 2025-12-03\ at\ 08.50.19_d4391750.jpg);
-    }
-
-    #direito-catarina {
-        margin-bottom: 10%;
-        padding-right: 60%;
-        height: 75%;
-        width: 60%;
-    }
-
-    .inserir-dados {
-        height: 6vh;
-    }
-
-    .icone-contato {
-        height: 3vw;
-        width: 4.5vw;
-    }
-
-    .texto-informacoes {
-        font-size: 1.7vw;
-        white-space: nowrap;
-    }
-
-    .dados {
-        margin-top: 7%;
-        gap: 15%;
-    }
-
-    .mensagem {
+    body {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+    }
+
+    header {
+        height: 44vh;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+    }
+
+    .navegacao {
+        height: clamp(2rem, 20vw, 9rem);
+    }
+
+    .nav-links {
+        gap: 2vw;
+    }
+
+    .link-ativo {
+        font-size: clamp(2vw, 2.2vw, 3rem);
+    }
+
+    .linha-separadora {
+        width: .2vw;
+    }
+
+    .logo {
+        width: clamp(10vw, 18vw, 12rem);
+        border: .2vw solid var(--marrom);
+    }
+
+    #perfil {
+        display: none;
+    }
+
+    .img-perfil {
+        width: 13vw;
+    }
+
+    .secao-banner {
+        margin-top: 3vh;
+    }
+
+    .titulo-banner {
+        font-size: clamp(4vw, 8vw, 9rem);
+        margin-bottom: 0;
+    }
+
+    .texto-sobre {
+        font-size: clamp(1vw, 2.6vw, 5rem);
+        margin: 1rem 0;
+    }
+
+    .link-encomenda,
+    .link-encomenda:hover {
+        font-size: 5.5vw;
+    }
+
+    .texto-titulo {
+        font-size: 6.5vw;
+        margin-top: 4vh;
+    }
+
+    .modelos-grid,
+    .sobre-nos,
+    .contato {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 3vw;
+    }
+
+    .modelos-grid {
+        gap: 10vh;
+    }
+
+    .modelo {
+        width: 50vw;
+        height: 60vh;
+    }
+
+    .modelo-texto {
+        font-size: clamp(2vw, 4vw, 5rem);
+    }
+
+    .link-portifolio,
+    .link-portifolio:hover {
+        margin-top: 10%;
+        font-size: 4.5vw;
+    }
+
+    .texto-esquerdo {
+        font-size: clamp(2vw, 3vw, 5rem);
+    }
+
+    .titulo {
+        font-size: 7vw;
+        margin-bottom: 5%;
+    }
+
+
+    .painel-direito {
+        margin: 0;
+        margin-bottom: 10%;
+    }
+
+    .direito-imagem {
+        width: 70vw;
+        height: 60vh;
+    }
+
+    .dados
+    {
+        gap: 14vw;
+    }
+
+    .inserir-dados{
+        height: clamp(2vw, 8vw, 6rem);
     }
 
     .titulo-caixa {
-        font-size: 2vw;
+        font-size: clamp(2vw, 3vw, 5rem);
     }
 
-    .inserir {
-        gap: 0;
-    }
-
-    #local-contato {
-        padding-left: 1vw;
+    .texto-informacoes{
+        font-size: clamp(2vw, 2.4vw, 5rem);
     }
 
     .botao-envio {
-        margin: 5rem 0 3.5vh 5vw;
-        border-radius: 1vw;
-        font-size: 1.9vw;
-        width: 20vw;
+        width: 29vw;
+        height: clamp(4vw, 7vw, 5vh);
+        font-size: clamp(2vw, 3vw, 5rem);
+
+    }
+    .texto-Poppins
+    {
+        font-family: var(--Poppins);
+        font-size: 3.1vw;
     }
 
-    nav {
-        gap: 23%;
+    .inserir-dados
+    {
+        font-size: clamp(2vw, 3vw, 5rem);
     }
 
-
-    #titulo-footer-trabalhe {
-        margin-bottom: 20%;
+    footer {
+        height: clamp(15vw, 30vw, 30vh);
     }
 
-
-    .procurar {
-        margin-top: 5%;
-        margin-left: 0;
+    .logo-gardenia-crochet {
+    height: 7vh;
+    border-radius: 0%;
+    width: clamp(6vw, 14vw, 12rem);
     }
 
-    .procurar-campo {
-        font-size: 1.2vw;
-        font-weight: 600;
+    .titulo-footer
+    {
+    font-size: clamp(2vw, 2.4vw, 2rem);
     }
 
-    .procurar-botao {
-        width: 2.5vw;
+    .nav-lists
+    {
+        font-size: clamp(2vw, 2.1vw, 2rem);
+    }
+    .procurar
+    {
+    margin-top: 44%;
+    margin-left: 12%;
+    height: 28.5%;        
     }
 
-    #linha-footer {
-        background-color: var(--bege-claro);
+    .procurar-campo
+    {
+        font-size: clamp(1.5vw, 1.6vw, 2rem);
     }
 
-    .direitos {
-        font-size: 1.5vw;
+    .procurar-botao
+    {
+        width: 3vw;
     }
+
+    .linha-footer
+    {
+        height: .21vh;
+    }
+
+    .direitos
+    {
+        font-size: clamp(1.5vw, 1.7vw, 2rem);
+    }
+
 }

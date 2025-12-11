@@ -1,0 +1,105 @@
+/* ***********************************
+               GERAL               */
+/*************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bege-claro);
+}
+
+/*************************************/
+/*              HEADER               */
+/*************************************/
+header {
+    background-image: url(../img/home-img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    
+    provavelmente isso está causando problema no layout geral */
+
+}
+
+.navegacao, .nav-links, .perfil-links {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.navegacao {
+    width: 100%;
+    background-color: rgba(var(--cinza-azuladoRGB), 0.85);
+    height: clamp(2rem, 7.5vw, 9rem);
+    padding: 0 2vw;
+    list-style: none;
+    justify-content: space-around;
+
+}
+
+.logo {
+    width: clamp(7vw, 10vw, 12vw);
+    height: auto;
+    margin-top: 3%;
+    padding: 0 2vw;
+}
+
+.linha-separadora {
+    width: .3vw;
+    background-color: var(--cinza-claro-azulado);
+    height: 75%;
+}
+
+
+.nav-links {
+    align-items: center;
+    gap: 10vw;
+    margin: 0 2vw;
+}
+
+.perfil-links {
+    margin-left: 2vw;
+    display: inline-flex;
+    align-items: center;
+    gap: 15%;
+}
+
+
+
+.link-ativo
+{
+    font-family: var(--Poppins);
+    font-size: clamp(1vw, 1.5vw, 1.5rem);
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+.link-ativo:hover {
+    color: var(--vermelho-escuro);
+    transition: 0.4s;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.img-perfil {
+    width: 4vw;
+    height: auto;
+    margin-right: 1vw;
+    padding: auto;
+}

@@ -35,8 +35,8 @@ header {
 
     background-color: rgba(var(--cinza-azuladoRGB), 0.85);
     width: 100%;
-    height: clamp(2rem,6.9vw, 7rem);
-    padding: 0 2vw;
+    height: clamp(2rem, 6.9vw, 7rem);
+    padding: 0 2vw; 
 
 
     /* width: calc(99vw + .2vw); */
