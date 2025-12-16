@@ -15,6 +15,13 @@ input[type="radio"] {
 }
 
 
+/*  ==================================================================
+   /                         CLASSES GLOBAIS                          \
+    ==================================================================
+*/
+
+
+
 
 
 
@@ -115,6 +122,38 @@ button {
     cursor: pointer;
 }
 
+
+h1
+{
+    font-family: var(--Lobster);
+    font-weight: 500;
+    font-size: clamp(.8em, 3vw, 4rem);
+    color: var(--marrom); 
+}
+
+.texto-subtitulo
+{
+    font-family: var(--Poppins);
+    /* font-size: clamp(1rem, 1.5vw, 2vw); */
+    font-size: clamp(.8vw, 1.4vw, 2vw);
+    font-weight: 600;
+    color: var(--marrom);
+    white-space: nowrap;   
+}
+
+.background-tag
+{
+    width: clamp(10rem, 15vw, 20rem);
+    /* height: clamp(2rem, 2.5vw, 4rem); */
+    height: clamp(40%, 2.5vw, 4rem);
+    
+    background-color: var(--cinza-azulado);
+    border: .2vw solid var(--borda-azul-escura);
+    border-radius: .5vw;   
+}
+
+
+
 .tela-principal
 {
     margin: 2% 3%;
@@ -122,71 +161,46 @@ button {
     flex-direction: column;
     gap: clamp(2rem, 3vw, 4rem);
     
-    width: clamp(90%, 91%, 100%);
-    height: clamp(80vh, 90vh, 100%);
+    /* width: clamp(90%, 94%, 100%);
+    height: clamp(80vh, 90vh, 100%); */
 
     border-radius: .2vw;
-}
-
-
-.titulo-encomenda
-{
-    font-family: var(--Lobster);
-    font-weight: 500;
-    font-size: clamp(2rem, 3vw, 4rem);
-    color: var(--marrom);
-}
-
-.pequeno-texto
-{
-    font-family: var(--Poppins);
-    font-size: clamp(1rem, 1.5vw, 2vw);
-    font-weight: 600;
-    color: var(--marrom);
-    white-space: nowrap;
-}
-
-.background-tag
-{
-    width: clamp(10rem, 15vw, 20rem);
-    height: clamp(2rem, 2.5vw, 4rem);
-    
-    background-color: var(--cinza-azulado);
-    border: .2vw solid var(--borda-azul-escura);
-    border-radius: .5vw;
 }
 
 .tela-encomenda
-{
-    border: .5vw solid var(--cinza-azulado);
-    border-radius: .2vw;
-    height: clamp(90%, 95%, 100%);
-    /* height: clamp(50vw, 60vh, 95vw); */
-    width: clamp(90%, 100%, 100%);
+    {
+        border-radius: .5vw;   
+        width: 100%;
+        height: 100%;
+        margin: 0% 0%;
+        border: .4vw solid var(--borda-azul-escura);
+        padding: 0 5%;
 
-    margin: 0 0% 0 clamp(1%, 1.9%, 2%);
-    padding: 2% 2% 0% 2%;
 }
 
-.texto-encomenda
-{
-    margin-bottom: clamp(.5vh, 2vw, 2rem);
-}
 
 .select
 {
+    
     background-color: var(--cinza-azulado);
-    width: clamp(10%, 20%, 39%);
+    width: clamp(5%, 19%, 39%);
+    /* width: clamp(10%, 20%, 39%); */
     /* height: clamp(5rem, 7vw, 10rem); */
-    margin-bottom: clamp(1vw, 2.5vw, 3rem);
-
+    /* margin-bottom: clamp(1vw, 2.5vw, 3rem); */
+    margin-bottom: 10%;
     border-radius: .5vw;    
 
 }
 
-#selecionarTrabalho-menu {
+
+.selectTamanho
+{
+    width: 16vw;
+}
+
+#selecionarTrabalho-menu, #selecionarTamanho-menu {
     display: flex;
-    padding: clamp(.5rem, 1vw, 2rem);
+    padding: clamp(.1rem, .2vw, 2rem) clamp(.09rem, .3vw, 1rem);
     align-items: center;
     justify-content: space-between;
     border-radius: .5vw;
@@ -210,26 +224,27 @@ button {
     white-space: nowrap;
     margin-right: 5%;
 } */
-#trabalhoSelecionado {
+#trabalhoSelecionado, #tamanhoSelecionado {
     /* font-size: clamp(1rem, 1.4vw, 2vw); */
     font-family: var(--Poppins);
-    font-size: 1.5vw;
+    font-size: clamp(.5rem, 1.5vw, 2vw);
     font-weight: 600;
     color: var(--marrom);
     white-space: nowrap;
     margin-right: 5%;
+    padding-left: .4vw;
 }
 
-#seta-img {
+#seta-img, #seta-img-tamanho {
   transition: transform .25s ease;
   /* width: clamp(.8rem, 2vw, 5rem);
   height: clamp(.8rem, 2vw, 5rem); */
-  width: clamp(10%, 12%, 15%);
+  width: clamp(5%, 8%, 15%);
   height: clamp(8%, 12%, 15%);
 }
 
 /* lista de opções - inicialmente escondida */
-#opcoes {
+#opcoes, #opcoesTamanho {
 
   border-radius: .5vw;
   /* width: clamp(10rem, 13vw, 20rem); */
@@ -253,7 +268,7 @@ button {
 
     border-radius: .5vw;
     margin-bottom: clamp(.1vw, 1vw, 3rem);
-    padding: clamp(1vh, 1.5vw, 2rem) clamp(1vw, 1.1vw, 1.4rem);
+    padding: clamp(1vh, 1.5vw, 2rem) clamp(.8vw, .9vw, 1.4rem);
     background-color: var(--cinza-azulado);
     
     cursor: pointer;
@@ -304,12 +319,17 @@ button {
 }
 
 /* open state: #opcoes é irmão direto (adjacent) do container .dropdown */
-.dropdown.open + #opcoes {
+#selecionar-Tipo-Trabalho.open + #opcoes {
+  display: block;
+}
+
+#selecionar-Tipo-Tamanho.open + #opcoesTamanho {
   display: block;
 }
 
 /* seta rotaciona quando a div container tem .open */
-.dropdown.open #seta-img {
+.dropdown.open #seta-img,
+.dropdown.open #seta-img-tamanho {
   transform: rotate(180deg);
 }
 
@@ -340,108 +360,16 @@ button {
   border-radius: .5vw;
 }
 
-.fio-conduzido-selecionado
+
+.trabalhoSelecionado
 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(1rem, 2vw, 3rem);
-    display: none;
-}
-
-
-
-.inserir-imagem
-{
-    display: flex;
-    /* border: 2px solid black; */
-    width: 100%;
-    height: clamp(30vw, 60vw, 70rem);
-    margin-bottom: 5%;
-    flex-direction: column;
-    align-content: center;
-    gap: 3vw;
-    flex-wrap: wrap;
-}
-
-
-.inserir-dados-form
-{
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-
-    background-color: var(--cinza-azulado);
-    border: .3vw solid var(--borda-azul-escura);
-    width: 90%;
-    height: 60%;
-}
-
-.texto-inserir-imagem
-{
-    font-size: clamp(1vw, 1.4vw, 2vw);
-    text-align: center;
-}
-
-.insira-imagem
-{
-    margin-right: auto;
-    margin-left: auto;
     
 }
 
-
-.inserir-img
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: clamp(40%, 90%, 90%);
-    height: (50%, 60%, 65%);
-    padding: 2% 2%;
-}
-
-
-.inserir-dados
-{
-    display: flex;
-    flex-direction: column;
-    gap: 3vw;
-    
-}
-
-.inserir-tamanho
-{
-    text-align: center;
-}
-
-.inserir-seu-dados
-{
-    display: inline-flex;
-    gap: 30%;
-}
-
-
-/* 
-    ================================================
-                REFERENCIAS SELECIONADO
-    ===============================================
-*/
-.referencias-selecionado
+.fio-conduzido
 {
     display: none;
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5%; 
-}
-
-.inserir-seus-dados
-{
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2vw;
 }
 
 .lado-esquerdo
@@ -449,103 +377,364 @@ button {
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    border: 2vw solid black;
-    padding: clamp(1vw, 1.2vw, 1.5vw);
+    width: 100%;
+    justify-content: center;
+    height: 60vh;
 }
 
-.referencias-texto
-{
-    font-size: 1.5vw;
-    text-align: center;
-}
-
-.texto-inserir-imagem
-{
-
-}
-
-.inserir-imagem
+.inserir-dados-form
 {
     border: .5vw solid var(--borda-azul-escura);
-    border-radius: .4vw;
     background-color: var(--cinza-azulado);
-    width: 100%;
-    /* height: clamp(10vh, 20vh,); */
-    /* height: 400px; */
-    height: 25vw;
-    padding: 5% 15%;
+    /* margin-left: -2%; */
+    width: clamp(20vw, 28vw, 40vw);
+    padding-top: 5%;
+    margin-bottom: 10%;
+}
+
+.texto-esquerda
+{
+    text-align: center;
+    font-size: clamp(1vw, 1.5vw, 2vw);
 }
 
 .insira-imagem
 {
-
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    margin-bottom: 20%;
+    gap: 4vw;
 }
 
 .inserir-img
 {
-    width: 14vw;
+    width: clamp(1vw, 15vw, 50vw);
+    
 }
 
+.lado-direito
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.inserir-tamanhos
+{
+    display: inline-flex;
+    gap: 4vw;
 
+}
+
+.referencia, .fio-conduzido
+{
+    margin-bottom: 5%;
+}
+
+.referencia
+{
+    display: none;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input-texto
+{
+    font-size: clamp(.5rem, 1.2vw, 2.9vw);
+    font-family: var(--Poppins);
+    font-weight: 600;
+    padding-left: .5vw;
+    /* margin-bottom: 10%; */
+    color: var(--marrom);
+}
+
+.referencia-selecionado
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    margin-left: 5%;
+    align-items: normal;
+}
+
+.referencia-lados
+{
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+}
 
 .tabela-dados
 {
     display: flex;
     flex-direction: column;
-    gap: clamp(1vw, 1.2vw, 2.2vw);
+    gap: .5vw;
 }
-
-.botoes 
+.botoes
 {
     display: inline-flex;
-    gap: 10%;
-    
+    align-items: center;
+    justify-content: space-around;
+    /* OPCIONAL Acima */
+    gap: 4vw;
 }
-
-.botao-nao, .botao-sim
+.botao-referencia
 {
-    width: 5vw;
-
-}
-
-.input-texto
-{
-    font-size: clamp(1vw, 1.1vw, 1.5vw);
-    font-family: var(--Poppins);
-    font-weight: 600;
-    color: var(--marrom);
-}
-
-.input-texto-botao
-{
-    padding-left: 0;
-}
-
-.input-texto-inserir
-{
+    width: 6vw;
     padding-left: 1vw;
-
+    padding-right: 1vw; 
 }
 
-#selecao-tamanho option
+.input-cor
 {
-    background-color: black;
-    border-radius: 2vw;    
+    width: 80%;
 }
 
-
-.selectTamanho
+.input-link
 {
-    background-color: var(--cinza-azulado);
-    height: clamp(10%, 45%, 70%);
-    width: clamp(10%, 70%, 100%);
-    margin-bottom: clamp(1vw, 2.5vw, 3rem);
-    border: .4vw solid var(--borda-azul-escura);
-    border-radius: .9vw;
+    width: 80%;
+    margin-bottom: 10%;
+}
+
+.input-linha
+{
+    /* width: 27vw; */
+    width: 100%;
+
+}
+
+.input-observacao
+{
+    /* width: 27vw; */
+    width: 90%;
+}
+
+@media (max-width: 1412px)
+{
+
+    .referencia, .fio-conduzido
+{
+    margin-bottom: 0;
+}
+
+    .select
+    {
+        margin-bottom: 10%;
+    }
+
+    .lado-esquerdo
+    {
+        
+    }
 }
 
 
+@media (max-width: 425px)
+{
+
+    body, .tela-encomenda, .tela-principal
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub-texto
+    {
+        font-size: 2.3vw;
+    }
+
+    .lista-menu
+    {
+        gap: 1vw;
+        height: clamp(2rem, 15vw, 7rem);
+    }
+
+    .linha-separadora
+    {
+        width: 1vw;
+        height: 86%;
+    }
+
+    .nav-links
+    {
+        gap: 1.5vw;
+    }
+
+    #Contato
+    {
+        margin-right: 2vw;
+    }
+
+    .logo
+    {
+        width: 15vw;
+        padding: 8%;
+        margin-top: 3%;
+    }
+
+    #perfil
+    {
+        display: none;
+    }
+
+    .login
+    {
+        width: 15vw;
+        padding: 8%;
+        margin-top: 3%;
+    }
+
+    h1
+    {
+        align-self: center;
+        font-size: 7vw;
+    }
 
 
-/* #selecionar-pag */
+
+    .tela-principal{
+        gap: clamp(2rem, 3vw, 4rem);
+    }
+    
+    .tela-encomenda
+    {
+        width: 100%;
+        height: clamp(140vw, 100vh, 1220rem);
+        flex-wrap: nowrap;
+        align-items: center;
+        border: 1vw solid var(--borda-azul-escura);
+    }
+
+    .texto-subtitulo
+    {
+        /* font-size: clamp(.8vw, 3vw, 5vw); */
+        font-size: clamp(.8vw, 2.5vw, 5vw);
+    }
+
+    .fio-conduzido, .referencia
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+
+    .lado-esquerdo, .lado-direito
+    {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        text-align: center;
+    }
+
+    .inserir-dados-form
+    {
+        width: 65%;
+        align-self: center;
+        margin-left: 2%;
+    }
+
+    .insira-imagem
+    {
+        margin-bottom: 10%;
+    }
+
+    .inserir-img
+    {
+        width: 50%;
+    }
+
+    .referencia-selecionado
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .referencia-lados
+    {
+        height: 31vh;
+    }
+
+    .referencia-selecionado
+    {
+        align-self: flex-start;
+        width: 80%;
+        gap: 10%;
+    }
+
+    .background-tag
+    {
+        align-self: center;
+        /* width: 40%; */
+    }
+
+    .input-texto
+    {
+        font-size:clamp(.5rem, 2.5vw, 4vw)
+    }
+    .botoes
+    {
+        justify-content: space-around;
+    }
+    .botao-referencia
+    {
+        width: 9vw;
+        height: 2vh;
+    }
+
+    .select
+    {
+        width: 28vw;
+        margin-bottom: 8%;
+    }
+    
+    .opcao
+    {
+        /* font-size:clamp(1vh, 3vw, 4rem); */
+        padding: clamp(1vh, 3vw, 5rem) clamp(.8vw, .9vw, 1.4rem);
+    }
+
+    .opcao-texto
+    {
+        font-size: 2.5vw;
+    }
+
+    #trabalhoSelecionado, #tamanhoSelecionado
+    {
+        font-size: clamp(.5rem, 2.5vw, 4vw);
+    }
+
+    .referencia
+    {
+        display: flex;
+    }
+    .fio-conduzido
+    {
+        display: none;
+        flex-direction: column;
+    }
+
+    .texto-titulo-encomenda
+    {
+        margin-top: 3%;
+        margin-bottom: 3%;
+        font-size: 4vw;
+    }
+
+    .referencia, .fio-conduzido
+    {
+        margin-bottom: 33%;
+    }
+
+    .inserir-fio-conduzido
+    {
+        width: 50%;
+    }
+
+
+}

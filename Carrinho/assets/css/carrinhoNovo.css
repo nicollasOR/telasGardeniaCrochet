@@ -18,6 +18,11 @@ body
 
 }
 
+input:focus
+{
+    border: none;
+    outline: none;
+}
 
 .link-voltar
 {

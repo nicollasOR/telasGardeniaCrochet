@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const label = radio.dataset.label || radio.value || radio.nextElementSibling?.textContent?.trim();
       if (label) {
         trabalhoSelecionado.textContent = label;
-        trabalhoSelecionado.style.color = '#FBF9FE';
+        trabalhoSelecionado.style.color = 'var(--marrom';
       }
       atualizarSelecao();
     });
